@@ -1077,3 +1077,14 @@ return new Response("Not Found", {
     "content-type": "text/plain; charset=utf-8"
   }
 });
+          } catch (e) {
+      return json(
+        {
+          ok: false,
+          message: e?.message || "Server error."
+        },
+        500
+      );
+    }
+  }
+};
