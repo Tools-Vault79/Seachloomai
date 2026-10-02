@@ -1,116 +1,610 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RTPT6EP02Z"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-RTPT6EP02Z');
-</script>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SeachLoom AI — SEO & AI Search Visibility Platform</title>
-<meta name="description" content="SeachLoom AI helps marketers research keywords, optimize content, audit pages, build SEO briefs and improve AI search visibility.">
-<link rel="canonical" href="https://seachloomai.shop/">
-<meta property="og:title" content="SeachLoom AI — SEO &amp; AI Search Visibility Platform">
-<meta property="og:description" content="SeachLoom AI helps marketers research keywords, optimize content, audit pages, build SEO briefs and improve AI search visibility.">
-<meta property="og:url" content="https://seachloomai.shop/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="SeachLoom AI">
-<meta name="theme-color" content="#0f766e">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RTPT6EP02Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-RTPT6EP02Z');
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- Primary SEO -->
+  <title>SeachLoom AI — SEO Tools & AI Search Visibility</title>
+  <meta name="description" content="SeachLoom AI provides practical SEO tools for keyword research, content optimization, page audits, SEO briefs and AI search visibility.">
+  <link rel="canonical" href="https://seachloomai.shop/">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="SeachLoom AI — SEO Tools &amp; AI Search Visibility">
+  <meta property="og:description" content="SeachLoom AI provides practical SEO tools for keyword research, content optimization, page audits, SEO briefs and AI search visibility.">
+  <meta property="og:url" content="https://seachloomai.shop/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SeachLoom AI">
+
+  <!-- Browser / Theme -->
+  <meta name="theme-color" content="#0f766e">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "SeachLoom AI",
+    "url": "https://seachloomai.shop/",
+    "description": "Practical SEO tools for keyword research, content optimization, page audits, SEO briefs and AI search visibility."
+  }
+  </script>
+
 </head>
+
 <body>
+
 <header class="nav">
-  <a class="brand" href="#"><span class="brandmark" aria-hidden="true">S</span><span>SeachLoom <b>AI</b></span></a>
+  <a class="brand" href="#">
+    <span class="brandmark" aria-hidden="true">S</span>
+    <span>SeachLoom <b>AI</b></span>
+  </a>
+
   <nav>
-    <a href="#tools">Tools</a><a href="#learn">Learn</a><a href="#write">Write for Us</a><a href="#services">Services</a>
+    <a href="#tools">Tools</a>
+    <a href="#learn">Learn</a>
+    <a href="#write">Write for Us</a>
+    <a href="#services">Services</a>
   </nav>
-  <div class="nav-actions"><button class="ghost" data-auth-action>Log in</button><button class="amber" onclick="document.querySelector('#tools').scrollIntoView({behavior:'smooth'})">Start free</button></div>
+
+  <div class="nav-actions">
+    <button class="ghost" data-auth-action>Log in</button>
+    <button class="amber" onclick="document.querySelector('#tools').scrollIntoView({behavior:'smooth'})">
+      Start free
+    </button>
+  </div>
 </header>
 
 <!-- Optional advertising placements. Hidden until an advertiser/banner is added. -->
+
 <div class="ad-slot ad-slot-top" data-ad-slot="top-banner" hidden>
-  <button class="ad-slot-close" type="button" aria-label="Close advertisement" onclick="removeAdSlot(this)">×</button>
-  <div class="ad-slot-content" aria-label="Top banner advertisement"></div>
+  <button
+    class="ad-slot-close"
+    type="button"
+    aria-label="Close advertisement"
+    onclick="removeAdSlot(this)"
+  >×</button>
+
+  <div
+    class="ad-slot-content"
+    aria-label="Top banner advertisement"
+  ></div>
 </div>
-<aside class="ad-rail ad-rail-left" data-ad-slot="left-rail" hidden aria-label="Left banner advertisement">
-  <button class="ad-slot-close" type="button" aria-label="Close advertisement" onclick="removeAdSlot(this)">×</button>
+
+<aside
+  class="ad-rail ad-rail-left"
+  data-ad-slot="left-rail"
+  hidden
+  aria-label="Left banner advertisement"
+>
+  <button
+    class="ad-slot-close"
+    type="button"
+    aria-label="Close advertisement"
+    onclick="removeAdSlot(this)"
+  >×</button>
+
   <div class="ad-slot-content"></div>
 </aside>
-<aside class="ad-rail ad-rail-right" data-ad-slot="right-rail" hidden aria-label="Right banner advertisement">
-  <button class="ad-slot-close" type="button" aria-label="Close advertisement" onclick="removeAdSlot(this)">×</button>
+
+<aside
+  class="ad-rail ad-rail-right"
+  data-ad-slot="right-rail"
+  hidden
+  aria-label="Right banner advertisement"
+>
+  <button
+    class="ad-slot-close"
+    type="button"
+    aria-label="Close advertisement"
+    onclick="removeAdSlot(this)"
+  >×</button>
+
   <div class="ad-slot-content"></div>
 </aside>
 
 <main>
-<section class="hero">
-  <div class="hero-copy">
-    <div class="eyebrow">SEO intelligence • AI search visibility</div>
-    <h1>Turn search data into <span>search visibility.</span></h1>
-    <p class="lead">Research keywords, build better content, audit pages and prepare for AI-powered search — from one focused workspace.</p>
-    <div class="hero-actions"><button class="amber big" onclick="document.querySelector('#tools').scrollIntoView({behavior:'smooth'})">Explore the tools</button><button class="outline big" onclick="document.querySelector('#learn').scrollIntoView({behavior:'smooth'})">See how it works</button></div>
-    <div class="trust"><span>✓ Preview before purchase</span><span>✓ Human-reviewed publishing</span><span>✓ Built for marketers</span></div>
-  </div>
-  <div class="hero-art">
-    <div class="orbit o1"></div><div class="orbit o2"></div>
-    <div class="person">👩‍💻</div>
-    <div class="float-card c1"><small>AI Visibility</small><strong>72%</strong><div class="bar"><i></i></div></div>
-    <div class="float-card c2"><small>Keyword intent</small><strong>Commercial</strong><span class="pill">Strong</span></div>
-    <div class="float-card c3"><small>Content gaps</small><strong>18 found</strong></div>
-  </div>
-</section>
 
-<section class="section intro">
-  <div><div class="eyebrow">One workspace</div><h2>From the first keyword to the final report.</h2></div>
-  <p>SeachLoom combines practical SEO workflows with AI-search analysis. Use a tool, see a meaningful preview, then unlock the complete report when you need the full work product.</p>
-</section>
+  <!-- HERO -->
+  <section class="hero">
 
-<section id="tools" class="section">
-  <div class="section-head"><div><div class="eyebrow">15 focused tools</div><h2>Choose your next SEO move.</h2></div><div class="filter"><input id="toolSearch" placeholder="Search tools…" oninput="filterTools()"></div></div>
-  <div id="toolGrid" class="tool-grid"></div>
-</section>
+    <div class="hero-copy">
 
-<section class="workflow section">
-  <div class="workflow-copy"><div class="eyebrow">How the commercial flow works</div><h2>Useful preview. Protected final result.</h2><p>The interface demonstrates what each tool can do without giving away the complete paid deliverable. Full results are designed to be returned only after verified purchase.</p>
-  <div class="steps"><div><b>01</b><span>Enter your data</span></div><div><b>02</b><span>Run a preview</span></div><div><b>03</b><span>Unlock the full report</span></div></div></div>
-  <div class="report-card"><div class="report-top"><span>Sample report</span><span class="locked">🔒 Full report locked</span></div><div class="score">84</div><div class="skeleton"><i></i><i></i><i></i><i></i></div><button class="amber wide" onclick="openPaywall()">Unlock full analysis</button></div>
-</section>
+      <div class="eyebrow">
+        SEO intelligence • AI search visibility
+      </div>
 
-<section id="learn" class="section learn">
-  <div class="section-head"><div><div class="eyebrow">Learn while you use it</div><h2>Short tutorials, practical workflows.</h2></div></div>
-  <div class="learn-grid">
-    <article><div class="lesson-icon">🔎</div><h3>Search intent</h3><p>Learn how informational, commercial and transactional intent changes the content you should create.</p><button onclick="openLesson('Search Intent')">Open tutorial →</button></article>
-    <article><div class="lesson-icon">🧩</div><h3>Content briefs</h3><p>Turn a keyword into a structured brief with audience, angle, headings, entities and questions.</p><button onclick="openLesson('SEO Briefs')">Open tutorial →</button></article>
-    <article><div class="lesson-icon">🤖</div><h3>AI search</h3><p>Understand visibility, citations and content signals as search increasingly includes AI answers.</p><button onclick="openLesson('AI Search Visibility')">Open tutorial →</button></article>
-  </div>
-</section>
+      <h1>
+        Turn search data into <span>search visibility.</span>
+      </h1>
 
-<section id="account" class="section account">
-<div><div class="eyebrow">Free account</div><h2>Start free. Pay when the full result is valuable.</h2><p>Create a free account to save projects, receive limited previews, track tool usage and keep your work in one place. Payment is only required when the user wants access to a protected full result.</p></div>
-<div class="account-cards"><div><b>Free signup</b><span>Create your account and manage your tools.</span></div><div><b>Lifetime access</b><span>Buy a tool once and keep access to it.</span></div><div><b>My tools</b><span>Return anytime to your purchased tools.</span></div></div>
-</section>
-<section id="services" class="section services"><div class="service-art">🧑‍💼</div><div><div class="eyebrow">Need a human team?</div><h2>SeachLoom services</h2><p>For businesses that want execution as well as software: SEO content writing, optimization, audits, keyword research, content briefs and AI-search strategy.</p><div class="chips"><span>SEO Content</span><span>Audits</span><span>Keyword Research</span><span>AI Search Strategy</span></div></div></section>
+      <p class="lead">
+        Research keywords, build better content, audit pages and prepare
+        for AI-powered search — from one focused workspace.
+      </p>
 
-<section id="write" class="section write">
-  <div class="write-copy"><div class="eyebrow">Free editorial submissions</div><h2>Write for SeachLoom AI</h2><p>Have a useful article about SEO, AI search, content marketing, SaaS or technology? Submit it for editorial consideration. There is no submission fee. Publication is subject to review.</p><div class="contact-card"><strong>Editorial contact</strong><span>aziz_zishan@yahoo.com</span><a target="_blank" rel="noopener" href="https://www.linkedin.com/in/zishan-aziz-optimizing-resources-building-strong-teams/">LinkedIn profile →</a></div><small>Links are reviewed for relevance and editorial quality. Publication and link attributes are determined by SeachLoom's editorial policy.</small></div>
-  <form id="writeForm" onsubmit="submitArticle(event)">
-    <label>Name<input name="name" required></label><label>Email<input name="email" type="email" required></label><label>Website<input name="website"></label><label>LinkedIn<input name="linkedin"></label><label>Article title<input name="title" required></label><label>Category<select name="category"><option>SEO</option><option>AI Search / GEO</option><option>Content Marketing</option><option>Technology</option><option>SaaS</option></select></label><label>Article / submission details<textarea name="content" rows="6" required></textarea></label><label>Relevant links<textarea name="links" rows="3" placeholder="List relevant links for editorial review"></textarea></label><button class="amber wide">Submit for review</button><p id="formMsg" class="form-msg"></p>
-  </form>
-</section>
+      <div class="hero-actions">
+
+        <button
+          class="amber big"
+          onclick="document.querySelector('#tools').scrollIntoView({behavior:'smooth'})"
+        >
+          Explore the tools
+        </button>
+
+        <button
+          class="outline big"
+          onclick="document.querySelector('#learn').scrollIntoView({behavior:'smooth'})"
+        >
+          See how it works
+        </button>
+
+      </div>
+
+      <div class="trust">
+        <span>✓ Preview before purchase</span>
+        <span>✓ Human-reviewed publishing</span>
+        <span>✓ Built for marketers</span>
+      </div>
+
+    </div>
+
+    <div class="hero-art">
+
+      <div class="orbit o1"></div>
+      <div class="orbit o2"></div>
+
+      <div class="person">👩‍💻</div>
+
+      <div class="float-card c1">
+        <small>AI Visibility</small>
+        <strong>72%</strong>
+        <div class="bar">
+          <i></i>
+        </div>
+      </div>
+
+      <div class="float-card c2">
+        <small>Keyword intent</small>
+        <strong>Commercial</strong>
+        <span class="pill">Strong</span>
+      </div>
+
+      <div class="float-card c3">
+        <small>Content gaps</small>
+        <strong>18 found</strong>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- INTRO -->
+  <section class="section intro">
+
+    <div>
+      <div class="eyebrow">One workspace</div>
+      <h2>From the first keyword to the final report.</h2>
+    </div>
+
+    <p>
+      SeachLoom combines practical SEO workflows with AI-search analysis.
+      Use a tool, see a meaningful preview, then unlock the complete report
+      when you need the full work product.
+    </p>
+
+  </section>
+
+  <!-- TOOLS -->
+  <section id="tools" class="section">
+
+    <div class="section-head">
+
+      <div>
+        <div class="eyebrow">15 focused tools</div>
+        <h2>Choose your next SEO move.</h2>
+      </div>
+
+      <div class="filter">
+        <input
+          id="toolSearch"
+          placeholder="Search tools…"
+          oninput="filterTools()"
+        >
+      </div>
+
+    </div>
+
+    <div id="toolGrid" class="tool-grid"></div>
+
+  </section>
+
+  <!-- WORKFLOW -->
+  <section class="workflow section">
+
+    <div class="workflow-copy">
+
+      <div class="eyebrow">
+        How the commercial flow works
+      </div>
+
+      <h2>
+        Useful preview. Protected final result.
+      </h2>
+
+      <p>
+        The interface demonstrates what each tool can do without giving away
+        the complete paid deliverable. Full results are designed to be
+        returned only after verified purchase.
+      </p>
+
+      <div class="steps">
+
+        <div>
+          <b>01</b>
+          <span>Enter your data</span>
+        </div>
+
+        <div>
+          <b>02</b>
+          <span>Run a preview</span>
+        </div>
+
+        <div>
+          <b>03</b>
+          <span>Unlock the full report</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="report-card">
+
+      <div class="report-top">
+        <span>Sample report</span>
+        <span class="locked">🔒 Full report locked</span>
+      </div>
+
+      <div class="score">84</div>
+
+      <div class="skeleton">
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+      </div>
+
+      <button
+        class="amber wide"
+        onclick="openPaywall()"
+      >
+        Unlock full analysis
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- LEARN -->
+  <section id="learn" class="section learn">
+
+    <div class="section-head">
+
+      <div>
+        <div class="eyebrow">Learn while you use it</div>
+        <h2>Short tutorials, practical workflows.</h2>
+      </div>
+
+    </div>
+
+    <div class="learn-grid">
+
+      <article>
+
+        <div class="lesson-icon">🔎</div>
+
+        <h3>Search intent</h3>
+
+        <p>
+          Learn how informational, commercial and transactional intent
+          changes the content you should create.
+        </p>
+
+        <button onclick="openLesson('Search Intent')">
+          Open tutorial →
+        </button>
+
+      </article>
+
+      <article>
+
+        <div class="lesson-icon">🧩</div>
+
+        <h3>Content briefs</h3>
+
+        <p>
+          Turn a keyword into a structured brief with audience, angle,
+          headings, entities and questions.
+        </p>
+
+        <button onclick="openLesson('SEO Briefs')">
+          Open tutorial →
+        </button>
+
+      </article>
+
+      <article>
+
+        <div class="lesson-icon">🤖</div>
+
+        <h3>AI search</h3>
+
+        <p>
+          Understand visibility, citations and content signals as search
+          increasingly includes AI answers.
+        </p>
+
+        <button onclick="openLesson('AI Search Visibility')">
+          Open tutorial →
+        </button>
+
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- ACCOUNT -->
+  <section id="account" class="section account">
+
+    <div>
+
+      <div class="eyebrow">Free account</div>
+
+      <h2>
+        Start free. Pay when the full result is valuable.
+      </h2>
+
+      <p>
+        Create a free account to save projects, receive limited previews,
+        track tool usage and keep your work in one place. Payment is only
+        required when the user wants access to a protected full result.
+      </p>
+
+    </div>
+
+    <div class="account-cards">
+
+      <div>
+        <b>Free signup</b>
+        <span>Create your account and manage your tools.</span>
+      </div>
+
+      <div>
+        <b>Lifetime access</b>
+        <span>Buy a tool once and keep access to it.</span>
+      </div>
+
+      <div>
+        <b>My tools</b>
+        <span>Return anytime to your purchased tools.</span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section services">
+
+    <div class="service-art">🧑‍💼</div>
+
+    <div>
+
+      <div class="eyebrow">Need a human team?</div>
+
+      <h2>SeachLoom services</h2>
+
+      <p>
+        For businesses that want execution as well as software:
+        SEO content writing, optimization, audits, keyword research,
+        content briefs and AI-search strategy.
+      </p>
+
+      <div class="chips">
+        <span>SEO Content</span>
+        <span>Audits</span>
+        <span>Keyword Research</span>
+        <span>AI Search Strategy</span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- WRITE FOR US -->
+  <section id="write" class="section write">
+
+    <div class="write-copy">
+
+      <div class="eyebrow">
+        Free editorial submissions
+      </div>
+
+      <h2>Write for SeachLoom AI</h2>
+
+      <p>
+        Have a useful article about SEO, AI search, content marketing,
+        SaaS or technology? Submit it for editorial consideration.
+        There is no submission fee. Publication is subject to review.
+      </p>
+
+      <div class="contact-card">
+
+        <strong>Editorial contact</strong>
+
+        <span>
+          aziz_zishan@yahoo.com
+        </span>
+
+        <a
+          target="_blank"
+          rel="noopener"
+          href="https://www.linkedin.com/in/zishan-aziz-optimizing-resources-building-strong-teams/"
+        >
+          LinkedIn profile →
+        </a>
+
+      </div>
+
+      <small>
+        Links are reviewed for relevance and editorial quality.
+        Publication and link attributes are determined by SeachLoom's
+        editorial policy.
+      </small>
+
+    </div>
+
+    <form id="writeForm" onsubmit="submitArticle(event)">
+
+      <label>
+        Name
+        <input name="name" required>
+      </label>
+
+      <label>
+        Email
+        <input name="email" type="email" required>
+      </label>
+
+      <label>
+        Website
+        <input name="website">
+      </label>
+
+      <label>
+        LinkedIn
+        <input name="linkedin">
+      </label>
+
+      <label>
+        Article title
+        <input name="title" required>
+      </label>
+
+      <label>
+        Category
+
+        <select name="category">
+          <option>SEO</option>
+          <option>AI Search / GEO</option>
+          <option>Content Marketing</option>
+          <option>Technology</option>
+          <option>SaaS</option>
+        </select>
+
+      </label>
+
+      <label>
+        Article / submission details
+        <textarea name="content" rows="6" required></textarea>
+      </label>
+
+      <label>
+        Relevant links
+        <textarea
+          name="links"
+          rows="3"
+          placeholder="List relevant links for editorial review"
+        ></textarea>
+      </label>
+
+      <button class="amber wide">
+        Submit for review
+      </button>
+
+      <p id="formMsg" class="form-msg"></p>
+
+    </form>
+
+  </section>
+
 </main>
 
-<footer><div class="brand"><span class="brandmark" aria-hidden="true">S</span><span>SeachLoom <b>AI</b></span></div><p>SEO + AI Search Visibility</p><div><a href="#tools">Tools</a><a href="#write">Write for Us</a><a target="_blank" href="https://www.linkedin.com/in/zishan-aziz-optimizing-resources-building-strong-teams/">LinkedIn</a></div></footer>
+<!-- FOOTER -->
+<footer>
 
-<div id="modal" class="modal" onclick="if(event.target===this)closeModal()"><div class="modal-box"><button class="x" onclick="closeModal()">×</button><div id="modalContent"></div></div></div>
+  <div class="brand">
+    <span class="brandmark" aria-hidden="true">S</span>
+    <span>SeachLoom <b>AI</b></span>
+  </div>
+
+  <p>SEO + AI Search Visibility</p>
+
+  <div>
+
+    <a href="#tools">Tools</a>
+
+    <a href="#write">
+      Write for Us
+    </a>
+
+    <a
+      target="_blank"
+      href="https://www.linkedin.com/in/zishan-aziz-optimizing-resources-building-strong-teams/"
+    >
+      LinkedIn
+    </a>
+
+  </div>
+
+</footer>
+
+<!-- MODAL -->
+<div
+  id="modal"
+  class="modal"
+  onclick="if(event.target===this)closeModal()"
+>
+  <div class="modal-box">
+
+    <button
+      class="x"
+      onclick="closeModal()"
+    >
+      ×
+    </button>
+
+    <div id="modalContent"></div>
+
+  </div>
+</div>
+
+<!-- JavaScript -->
 <script src="ad-slots.js"></script>
 <script src="auth.js"></script>
 <script src="config/gumroad-products.js"></script>
 <script src="app.js"></script>
+
 </body>
 </html>
