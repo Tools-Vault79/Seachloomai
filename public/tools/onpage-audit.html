@@ -1,95 +1,24 @@
-<!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>On-Page SEO Audit — SeachLoom AI</title>
-<meta name="description" content="Review important on-page SEO elements and identify optimization opportunities.">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>On-Page SEO Audit Tool – Check & Improve SEO | SeachLoom AI</title>
+
+<meta name="description" content="Audit important on-page SEO elements and discover optimization opportunities. Check titles, meta descriptions, headings, content and other SEO signals with SeachLoom AI.">
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
 <link rel="canonical" href="https://seachloomai.shop/tools/onpage-audit.html">
-<meta property="og:title" content="On-Page SEO Audit — SeachLoom AI">
-<meta property="og:description" content="Review important on-page SEO elements and identify optimization opportunities.">
+
+<meta property="og:title" content="On-Page SEO Audit Tool – Check & Improve SEO | SeachLoom AI">
+<meta property="og:description" content="Audit important on-page SEO elements and discover optimization opportunities with SeachLoom AI.">
 <meta property="og:url" content="https://seachloomai.shop/tools/onpage-audit.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SeachLoom AI">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="On-Page SEO Audit Tool – Check & Improve SEO | SeachLoom AI">
+<meta name="twitter:description" content="Audit important on-page SEO elements and discover optimization opportunities.">
+
 <link rel="stylesheet" href="../styles.css">
 </head>
-<body>
-<header class="nav">
-<a class="brand" href="../index.html"><span class="brandmark" aria-hidden="true">S</span><span>SeachLoom <b>AI</b></span></a>
-<nav><a href="../index.html#tools">Tools</a><a href="../index.html#learn">Learn</a><a href="../index.html#write">Write for Us</a></nav>
-<div class="nav-actions"><button class="ghost" data-auth-action>Log in</button><a class="amber" href="../index.html#tools">All tools</a></div>
-</header>
-
-<!-- Optional advertising placements. Hidden until an advertiser/banner is added. -->
-<div class="ad-slot ad-slot-top" data-ad-slot="top-banner" hidden>
-  <button class="ad-slot-close" type="button" aria-label="Close advertisement" onclick="removeAdSlot(this)">×</button>
-  <div class="ad-slot-content" aria-label="Top banner advertisement"></div>
-</div>
-<aside class="ad-rail ad-rail-left" data-ad-slot="left-rail" hidden aria-label="Left banner advertisement">
-  <button class="ad-slot-close" type="button" aria-label="Close advertisement" onclick="removeAdSlot(this)">×</button>
-  <div class="ad-slot-content"></div>
-</aside>
-<aside class="ad-rail ad-rail-right" data-ad-slot="right-rail" hidden aria-label="Right banner advertisement">
-  <button class="ad-slot-close" type="button" aria-label="Close advertisement" onclick="removeAdSlot(this)">×</button>
-  <div class="ad-slot-content"></div>
-</aside>
-<main>
-<section class="tool-hero">
-<div>
-<div class="eyebrow">SeachLoom AI Tool</div>
-<h1>On-Page SEO Audit</h1>
-<p class="lead">Review important on-page SEO elements and identify optimization opportunities.</p>
-<div class="tool-meta"><span>✓ Free preview</span><span>✓ Full result protected</span><span>✓ Lifetime purchase</span></div>
-</div>
-<div class="tool-visual"><div class="tool-icon big-icon">🔎</div><div class="visual-lines"><i></i><i></i><i></i><i></i></div></div>
-</section>
-<section class="tool-workspace">
-<div class="workspace-card">
-<div class="workspace-head"><div><div class="eyebrow">Run a preview</div><h2>Enter your information</h2></div><span class="locked">🔒 Full result protected</span></div>
-<form id="toolForm">
-<label>Topic, keyword or URL
-<input id="toolInput" required placeholder="Enter your topic, keyword or URL">
-</label>
-<label>Optional context
-<textarea id="context" rows="4" placeholder="Add audience, country, page type or other useful context"></textarea>
-</label>
-<button class="amber big" type="submit">Generate free preview</button>
-</form>
-<div id="result" class="result-area"></div>
-</div>
-<aside class="learning-card">
-<div class="lesson-icon">💡</div><h3>How this tool works</h3>
-<p>SeachLoom first generates a limited preview so users can understand the value of the analysis. The complete report is intentionally protected.</p>
-<ol><li>Enter your data</li><li>Generate preview</li><li>Review sample insights</li><li>Unlock the full report</li></ol>
-</aside>
-</section>
-</main>
-<footer><div class="brand"><span class="brandmark" aria-hidden="true">S</span><span>SeachLoom <b>AI</b></span></div><p>SEO + AI Search Visibility</p><a href="../index.html">Back to SeachLoom AI</a></footer>
-<script src="../ad-slots.js"></script>
-<script src="../auth.js"></script>
-<script>
-document.getElementById("toolForm").addEventListener("submit", async (e) => {
- e.preventDefault();
- const input=document.getElementById("toolInput").value.trim();
- const context=document.getElementById("context").value.trim();
- const result=document.getElementById("result");
- result.innerHTML='<div class="loading">Analyzing your request…</div>';
- try {
-   const r=await fetch("../api/tool/preview",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({tool:"onpage-audit",input,context})});
-   const data=await r.json();
-   result.innerHTML=`<div class="preview-box"><div class="eyebrow">Free preview</div><h3>Preview generated</h3>
-   <p>SeachLoom has prepared an initial analysis for <b>${escapeHtml(input)}</b>.</p>
-   <div class="preview-stats"><span>Opportunities <b>Available</b></span><span>Detailed findings <b>Locked</b></span><span>Full report <b>Locked</b></span></div>
-   <div class="blur-lines"><i></i><i></i><i></i><i></i></div>
-   <button class="amber wide" onclick="openPaywall()">🔒 Unlock full report</button></div>`;
- } catch(err) {
-   result.innerHTML='<div class="preview-box"><b>Preview interface ready.</b><p>The production API still needs to be connected and deployed.</p></div>';
- }
-});
-function openPaywall() {
- const result=document.getElementById("result");
- result.innerHTML='<div class="paywall"><div class="eyebrow">Protected result</div><h3>Unlock the complete report</h3><p>Your preview is free. The detailed report, recommendations and exportable output are reserved for verified purchase.</p><div class="price">Full report <span>Lifetime purchase</span></div><button class="amber wide" onclick="alert(\'Use the Buy button above, then activate your Gumroad license key here.\')">Continue to payment</button></div>';
-}
-function escapeHtml(s){return s.replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));}
-</script>
-<script src="../config/gumroad-products.js"></script>
-<script src="../gumroad-paywall.js"></script>
-</body></html>
