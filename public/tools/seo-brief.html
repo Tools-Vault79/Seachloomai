@@ -1,95 +1,903 @@
 <!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>SEO Brief Builder — SeachLoom AI</title>
-<meta name="description" content="Build a structured SEO content brief before writing.">
+
+<meta name="description" content="Build a structured SEO content brief with search intent, keywords, headings, content recommendations and optimization opportunities.">
+
 <link rel="canonical" href="https://seachloomai.shop/tools/seo-brief.html">
+
 <meta property="og:title" content="SEO Brief Builder — SeachLoom AI">
-<meta property="og:description" content="Build a structured SEO content brief before writing.">
+<meta property="og:description" content="Build a structured SEO content brief with search intent, keywords, headings, content recommendations and optimization opportunities.">
 <meta property="og:url" content="https://seachloomai.shop/tools/seo-brief.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SeachLoom AI">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SEO Brief Builder — SeachLoom AI">
+<meta name="twitter:description" content="Build a structured SEO content brief before writing.">
+
 <link rel="stylesheet" href="../styles.css">
 </head>
+
 <body>
+
 <header class="nav">
-<a class="brand" href="../index.html"><span class="brandmark" aria-hidden="true">S</span><span>SeachLoom <b>AI</b></span></a>
-<nav><a href="../index.html#tools">Tools</a><a href="../index.html#learn">Learn</a><a href="../index.html#write">Write for Us</a></nav>
-<div class="nav-actions"><button class="ghost" data-auth-action>Log in</button><a class="amber" href="../index.html#tools">All tools</a></div>
+
+<a class="brand" href="../index.html" aria-label="SeachLoom AI Home">
+  <span class="brandmark" aria-hidden="true">S</span>
+  <span>SeachLoom <b>AI</b></span>
+</a>
+
+<nav aria-label="Main navigation">
+  <a href="../index.html#tools">Tools</a>
+  <a href="../index.html#learn">Learn</a>
+  <a href="../index.html#write">Write for Us</a>
+</nav>
+
+<div class="nav-actions">
+  <button class="ghost" type="button" data-auth-action>Log in</button>
+  <a class="amber" href="../index.html#tools">All tools</a>
+</div>
+
 </header>
 
-<!-- Optional advertising placements. Hidden until an advertiser/banner is added. -->
-<div class="ad-slot ad-slot-top" data-ad-slot="top-banner" hidden>
-  <button class="ad-slot-close" type="button" aria-label="Close advertisement" onclick="removeAdSlot(this)">×</button>
-  <div class="ad-slot-content" aria-label="Top banner advertisement"></div>
+
+<!-- =========================
+     ADVERTISEMENT PLACEMENTS
+     ========================= -->
+
+<div
+  class="ad-slot ad-slot-top"
+  data-ad-slot="top-banner"
+  hidden
+>
+  <button
+    class="ad-slot-close"
+    type="button"
+    aria-label="Close advertisement"
+    onclick="removeAdSlot(this)"
+  >×</button>
+
+  <div
+    class="ad-slot-content"
+    aria-label="Top banner advertisement"
+  ></div>
 </div>
-<aside class="ad-rail ad-rail-left" data-ad-slot="left-rail" hidden aria-label="Left banner advertisement">
-  <button class="ad-slot-close" type="button" aria-label="Close advertisement" onclick="removeAdSlot(this)">×</button>
+
+
+<aside
+  class="ad-rail ad-rail-left"
+  data-ad-slot="left-rail"
+  hidden
+  aria-label="Left banner advertisement"
+>
+
+  <button
+    class="ad-slot-close"
+    type="button"
+    aria-label="Close advertisement"
+    onclick="removeAdSlot(this)"
+  >×</button>
+
   <div class="ad-slot-content"></div>
+
 </aside>
-<aside class="ad-rail ad-rail-right" data-ad-slot="right-rail" hidden aria-label="Right banner advertisement">
-  <button class="ad-slot-close" type="button" aria-label="Close advertisement" onclick="removeAdSlot(this)">×</button>
+
+
+<aside
+  class="ad-rail ad-rail-right"
+  data-ad-slot="right-rail"
+  hidden
+  aria-label="Right banner advertisement"
+>
+
+  <button
+    class="ad-slot-close"
+    type="button"
+    aria-label="Close advertisement"
+    onclick="removeAdSlot(this)"
+  >×</button>
+
   <div class="ad-slot-content"></div>
+
 </aside>
+
+
 <main>
+
+<!-- =========================
+     TOOL HERO
+     ========================= -->
+
 <section class="tool-hero">
-<div>
-<div class="eyebrow">SeachLoom AI Tool</div>
-<h1>SEO Brief Builder</h1>
-<p class="lead">Build a structured SEO content brief before writing.</p>
-<div class="tool-meta"><span>✓ Free preview</span><span>✓ Full result protected</span><span>✓ Lifetime purchase</span></div>
-</div>
-<div class="tool-visual"><div class="tool-icon big-icon">🔎</div><div class="visual-lines"><i></i><i></i><i></i><i></i></div></div>
+
+  <div>
+
+    <div class="eyebrow">
+      SeachLoom AI Tool
+    </div>
+
+    <h1>
+      SEO Brief Builder
+    </h1>
+
+    <p class="lead">
+      Build a structured SEO content brief before writing.
+    </p>
+
+    <div class="tool-meta">
+      <span>✓ Free preview</span>
+      <span>✓ Full result protected</span>
+      <span>✓ Lifetime purchase</span>
+    </div>
+
+  </div>
+
+
+  <div class="tool-visual" aria-hidden="true">
+
+    <div class="tool-icon big-icon">
+      📝
+    </div>
+
+    <div class="visual-lines">
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+    </div>
+
+  </div>
+
 </section>
+
+
+<!-- =========================
+     TOOL WORKSPACE
+     ========================= -->
+
 <section class="tool-workspace">
-<div class="workspace-card">
-<div class="workspace-head"><div><div class="eyebrow">Run a preview</div><h2>Enter your information</h2></div><span class="locked">🔒 Full result protected</span></div>
-<form id="toolForm">
-<label>Topic, keyword or URL
-<input id="toolInput" required placeholder="Enter your topic, keyword or URL">
-</label>
-<label>Optional context
-<textarea id="context" rows="4" placeholder="Add audience, country, page type or other useful context"></textarea>
-</label>
-<button class="amber big" type="submit">Generate free preview</button>
-</form>
-<div id="result" class="result-area"></div>
-</div>
-<aside class="learning-card">
-<div class="lesson-icon">💡</div><h3>How this tool works</h3>
-<p>SeachLoom first generates a limited preview so users can understand the value of the analysis. The complete report is intentionally protected.</p>
-<ol><li>Enter your data</li><li>Generate preview</li><li>Review sample insights</li><li>Unlock the full report</li></ol>
-</aside>
+
+  <div class="workspace-card">
+
+    <div class="workspace-head">
+
+      <div>
+
+        <div class="eyebrow">
+          Run a preview
+        </div>
+
+        <h2>
+          Build your SEO brief
+        </h2>
+
+      </div>
+
+      <span class="locked">
+        🔒 Full result protected
+      </span>
+
+    </div>
+
+
+    <!-- TOOL FORM -->
+
+    <form id="toolForm" novalidate>
+
+      <label for="toolInput">
+        Topic, keyword or URL
+
+        <input
+          id="toolInput"
+          name="input"
+          type="text"
+          required
+          autocomplete="off"
+          maxlength="500"
+          placeholder="e.g. best running shoes for beginners"
+          aria-describedby="inputHelp"
+        >
+
+      </label>
+
+      <div
+        id="inputHelp"
+        class="field-help"
+      >
+        Enter the main topic, target keyword, or URL you want to build a brief for.
+      </div>
+
+
+      <label for="context">
+        Optional context
+
+        <textarea
+          id="context"
+          name="context"
+          rows="5"
+          maxlength="2000"
+          placeholder="Add audience, country, search intent, industry, page type or other useful context"
+        ></textarea>
+
+      </label>
+
+
+      <button
+        id="submitButton"
+        class="amber big"
+        type="submit"
+      >
+        Generate free preview
+      </button>
+
+    </form>
+
+
+    <!-- RESULT AREA -->
+
+    <div
+      id="result"
+      class="result-area"
+      aria-live="polite"
+      aria-atomic="true"
+    ></div>
+
+  </div>
+
+
+  <!-- =========================
+       LEARNING CARD
+       ========================= -->
+
+  <aside class="learning-card">
+
+    <div
+      class="lesson-icon"
+      aria-hidden="true"
+    >
+      💡
+    </div>
+
+    <h3>
+      How this tool works
+    </h3>
+
+    <p>
+      SeachLoom creates a structured SEO content brief from your topic,
+      keyword or URL. The free preview provides an initial look at the
+      analysis while the complete report remains protected.
+    </p>
+
+    <ol>
+      <li>Enter your topic, keyword or URL</li>
+      <li>Add optional context</li>
+      <li>Generate your free preview</li>
+      <li>Review sample insights</li>
+      <li>Unlock the complete report</li>
+    </ol>
+
+  </aside>
+
 </section>
+
+
+<!-- =========================
+     SEO CONTENT SECTION
+     ========================= -->
+
+<section
+  class="tool-info"
+  aria-labelledby="aboutSeoBrief"
+>
+
+  <div class="workspace-card">
+
+    <div class="eyebrow">
+      SEO Content Planning
+    </div>
+
+    <h2 id="aboutSeoBrief">
+      Create a structured SEO content brief
+    </h2>
+
+    <p>
+      The SeachLoom AI SEO Brief Builder helps organize the key information
+      needed before creating search-focused content. Use a topic, keyword or
+      URL to generate a structured starting point for your content planning.
+    </p>
+
+    <p>
+      Depending on the available analysis, a complete brief can include
+      search intent, keyword opportunities, suggested headings,
+      content direction, optimization recommendations and other useful
+      planning information.
+    </p>
+
+  </div>
+
+</section>
+
 </main>
-<footer><div class="brand"><span class="brandmark" aria-hidden="true">S</span><span>SeachLoom <b>AI</b></span></div><p>SEO + AI Search Visibility</p><a href="../index.html">Back to SeachLoom AI</a></footer>
+
+
+<!-- =========================
+     FOOTER
+     ========================= -->
+
+<footer>
+
+  <div class="brand">
+    <span
+      class="brandmark"
+      aria-hidden="true"
+    >S</span>
+
+    <span>
+      SeachLoom <b>AI</b>
+    </span>
+  </div>
+
+  <p>
+    SEO + AI Search Visibility
+  </p>
+
+  <a href="../index.html">
+    Back to SeachLoom AI
+  </a>
+
+</footer>
+
+
+<!-- =========================
+     SITE SCRIPTS
+     ========================= -->
+
 <script src="../ad-slots.js"></script>
 <script src="../auth.js"></script>
+
+
 <script>
-document.getElementById("toolForm").addEventListener("submit", async (e) => {
- e.preventDefault();
- const input=document.getElementById("toolInput").value.trim();
- const context=document.getElementById("context").value.trim();
- const result=document.getElementById("result");
- result.innerHTML='<div class="loading">Analyzing your request…</div>';
- try {
-   const r=await fetch("../api/tool/preview",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({tool:"seo-brief",input,context})});
-   const data=await r.json();
-   result.innerHTML=`<div class="preview-box"><div class="eyebrow">Free preview</div><h3>Preview generated</h3>
-   <p>SeachLoom has prepared an initial analysis for <b>${escapeHtml(input)}</b>.</p>
-   <div class="preview-stats"><span>Opportunities <b>Available</b></span><span>Detailed findings <b>Locked</b></span><span>Full report <b>Locked</b></span></div>
-   <div class="blur-lines"><i></i><i></i><i></i><i></i></div>
-   <button class="amber wide" onclick="openPaywall()">🔒 Unlock full report</button></div>`;
- } catch(err) {
-   result.innerHTML='<div class="preview-box"><b>Preview interface ready.</b><p>The production API still needs to be connected and deployed.</p></div>';
- }
-});
-function openPaywall() {
- const result=document.getElementById("result");
- result.innerHTML='<div class="paywall"><div class="eyebrow">Protected result</div><h3>Unlock the complete report</h3><p>Your preview is free. The detailed report, recommendations and exportable output are reserved for verified purchase.</p><div class="price">Full report <span>Lifetime purchase</span></div><button class="amber wide" onclick="alert(\'Use the Buy button above, then activate your Gumroad license key here.\')">Continue to payment</button></div>';
-}
-function escapeHtml(s){return s.replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));}
+/* ==========================================
+   SEO BRIEF BUILDER
+   ========================================== */
+
+(function () {
+
+  const form = document.getElementById("toolForm");
+  const input = document.getElementById("toolInput");
+  const context = document.getElementById("context");
+  const result = document.getElementById("result");
+  const submitButton = document.getElementById("submitButton");
+
+
+  /*
+   * Escape user/API text before inserting it into HTML.
+   */
+  function escapeHtml(value) {
+
+    return String(value || "").replace(
+      /[&<>"']/g,
+      function (character) {
+
+        return {
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#039;"
+        }[character];
+
+      }
+    );
+
+  }
+
+
+  /*
+   * Safely extract useful text from an API response.
+   *
+   * Different backend implementations may return:
+   * data.preview
+   * data.result
+   * data.message
+   * data.analysis
+   * data.content
+   *
+   * This keeps the frontend flexible.
+   */
+  function extractApiContent(data) {
+
+    if (!data) {
+      return "";
+    }
+
+    if (typeof data === "string") {
+      return data;
+    }
+
+    const possibleFields = [
+      "preview",
+      "result",
+      "analysis",
+      "content",
+      "message"
+    ];
+
+    for (const field of possibleFields) {
+
+      if (
+        data[field] !== undefined &&
+        data[field] !== null &&
+        String(data[field]).trim() !== ""
+      ) {
+
+        return String(data[field]);
+
+      }
+
+    }
+
+    return "";
+
+  }
+
+
+  /*
+   * Convert simple line breaks into safe HTML.
+   */
+  function formatText(value) {
+
+    return escapeHtml(value)
+      .replace(/\n\n+/g, "</p><p>")
+      .replace(/\n/g, "<br>");
+
+  }
+
+
+  /*
+   * Loading state.
+   */
+  function showLoading() {
+
+    result.innerHTML = `
+      <div class="preview-box">
+        <div class="eyebrow">SeachLoom AI</div>
+        <h3>Building your SEO brief…</h3>
+        <p>
+          Please wait while SeachLoom processes your request.
+        </p>
+        <div class="loading" role="status">
+          Analyzing your request…
+        </div>
+      </div>
+    `;
+
+  }
+
+
+  /*
+   * Error state.
+   */
+  function showError(message) {
+
+    result.innerHTML = `
+      <div class="preview-box">
+        <div class="eyebrow">Unable to complete request</div>
+
+        <h3>
+          Something went wrong
+        </h3>
+
+        <p>
+          ${escapeHtml(message)}
+        </p>
+
+        <button
+          type="button"
+          class="amber wide"
+          onclick="retrySeoBrief()"
+        >
+          Try again
+        </button>
+
+      </div>
+    `;
+
+  }
+
+
+  /*
+   * Display preview returned by API.
+   *
+   * The detailed report remains protected.
+   */
+  function showPreview(inputValue, apiData) {
+
+    const apiContent = extractApiContent(apiData);
+
+    let previewContent = "";
+
+    if (apiContent) {
+
+      previewContent = `
+        <div class="preview-content">
+          <div class="eyebrow">
+            Initial analysis
+          </div>
+
+          <p>
+            ${formatText(apiContent)}
+          </p>
+        </div>
+      `;
+
+    } else {
+
+      previewContent = `
+        <div class="preview-content">
+
+          <div class="eyebrow">
+            Initial analysis
+          </div>
+
+          <p>
+            SeachLoom has prepared an initial SEO brief
+            for <strong>${escapeHtml(inputValue)}</strong>.
+          </p>
+
+        </div>
+      `;
+
+    }
+
+
+    result.innerHTML = `
+
+      <div class="preview-box">
+
+        <div class="eyebrow">
+          Free preview
+        </div>
+
+        <h3>
+          SEO brief preview generated
+        </h3>
+
+        ${previewContent}
+
+        <div class="preview-stats">
+
+          <span>
+            SEO opportunities
+            <b>Available</b>
+          </span>
+
+          <span>
+            Detailed findings
+            <b>Locked</b>
+          </span>
+
+          <span>
+            Complete brief
+            <b>Locked</b>
+          </span>
+
+        </div>
+
+
+        <div class="blur-lines" aria-hidden="true">
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+        </div>
+
+
+        <button
+          type="button"
+          class="amber wide"
+          onclick="openPaywall()"
+        >
+          🔒 Unlock full SEO brief
+        </button>
+
+      </div>
+
+    `;
+
+  }
+
+
+  /*
+   * Submit form.
+   */
+  form.addEventListener("submit", async function (event) {
+
+    event.preventDefault();
+
+
+    const inputValue = input.value.trim();
+    const contextValue = context.value.trim();
+
+
+    if (!inputValue) {
+
+      input.focus();
+
+      result.innerHTML = `
+        <div class="preview-box">
+          <h3>Please enter a topic or keyword</h3>
+          <p>
+            Enter a topic, keyword or URL before generating your SEO brief.
+          </p>
+        </div>
+      `;
+
+      return;
+
+    }
+
+
+    /*
+     * Prevent repeated submissions.
+     */
+    submitButton.disabled = true;
+    submitButton.setAttribute("aria-busy", "true");
+    submitButton.textContent = "Generating preview…";
+
+
+    showLoading();
+
+
+    try {
+
+      const response = await fetch(
+        "../api/tool/preview",
+        {
+          method: "POST",
+
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+
+          body: JSON.stringify({
+            tool: "seo-brief",
+            input: inputValue,
+            context: contextValue
+          })
+        }
+      );
+
+
+      /*
+       * Attempt to parse JSON.
+       */
+      let data = null;
+
+      try {
+
+        data = await response.json();
+
+      } catch (jsonError) {
+
+        throw new Error(
+          "The server returned an invalid response."
+        );
+
+      }
+
+
+      /*
+       * Handle HTTP errors.
+       */
+      if (!response.ok) {
+
+        const serverMessage =
+          data &&
+          (
+            data.error ||
+            data.message
+          );
+
+        throw new Error(
+          serverMessage ||
+          "The SEO brief service is currently unavailable."
+        );
+
+      }
+
+
+      showPreview(inputValue, data);
+
+
+    } catch (error) {
+
+      console.error(
+        "SEO Brief Builder error:",
+        error
+      );
+
+
+      showError(
+        error.message ||
+        "The production API could not process your request."
+      );
+
+
+    } finally {
+
+      submitButton.disabled = false;
+      submitButton.removeAttribute("aria-busy");
+      submitButton.textContent = "Generate free preview";
+
+    }
+
+  });
+
+
+  /*
+   * Retry helper.
+   */
+  window.retrySeoBrief = function () {
+
+    form.dispatchEvent(
+      new Event("submit", {
+        bubbles: true,
+        cancelable: true
+      })
+    );
+
+  };
+
+
+  /*
+   * Paywall.
+   */
+  window.openPaywall = function () {
+
+    result.innerHTML = `
+
+      <div class="paywall">
+
+        <div class="eyebrow">
+          Protected result
+        </div>
+
+        <h3>
+          Unlock the complete SEO brief
+        </h3>
+
+        <p>
+          Your initial preview is free.
+          The complete SEO brief, detailed findings,
+          recommendations and exportable output are
+          reserved for verified purchase.
+        </p>
+
+
+        <div class="price">
+          Full SEO brief
+          <span>Lifetime purchase</span>
+        </div>
+
+
+        <button
+          type="button"
+          class="amber wide"
+          onclick="continueToPayment()"
+        >
+          Continue to payment
+        </button>
+
+
+        <button
+          type="button"
+          class="ghost wide"
+          onclick="restorePreview()"
+          style="margin-top:10px;"
+        >
+          Back to preview
+        </button>
+
+      </div>
+
+    `;
+
+  };
+
+
+  /*
+   * Return to previous preview.
+   *
+   * The page will be restored by submitting
+   * the form again.
+   */
+  window.restorePreview = function () {
+
+    form.dispatchEvent(
+      new Event("submit", {
+        bubbles: true,
+        cancelable: true
+      })
+    );
+
+  };
+
+
+  /*
+   * Payment handler.
+   *
+   * The existing Gumroad paywall script is loaded
+   * below. If it exposes a compatible function,
+   * use it. Otherwise provide a clear message.
+   */
+  window.continueToPayment = function () {
+
+    /*
+     * Try common functions exposed by the
+     * existing Gumroad integration.
+     */
+    if (
+      typeof window.openGumroadPaywall === "function"
+    ) {
+
+      window.openGumroadPaywall();
+
+      return;
+
+    }
+
+
+    if (
+      typeof window.openGumroadCheckout === "function"
+    ) {
+
+      window.openGumroadCheckout();
+
+      return;
+
+    }
+
+
+    if (
+      typeof window.startGumroadCheckout === "function"
+    ) {
+
+      window.startGumroadCheckout();
+
+      return;
+
+    }
+
+
+    /*
+     * If gumroad-paywall.js provides no global
+     * checkout function, inform the user rather
+     * than pretending that payment has started.
+     */
+    alert(
+      "The Gumroad payment integration is loaded, but its checkout action is not available on this page yet."
+    );
+
+  };
+
+
+})();
 </script>
+
+
+<!-- =========================
+     GUMROAD CONFIGURATION
+     ========================= -->
+
 <script src="../config/gumroad-products.js"></script>
 <script src="../gumroad-paywall.js"></script>
-</body></html>
+
+</body>
+</html>
