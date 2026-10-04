@@ -1,66 +1,799 @@
+<!doctype html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Keyword Opportunity Finder | Find SEO Keyword Opportunities | SeachLoom AI</title>
+<title>Keyword Opportunity Finder | Find SEO Opportunities — SeachLoom AI</title>
 
-<meta name="description" content="Find SEO keyword opportunities from a seed topic, keyword, audience or URL. Discover relevant search opportunities and content ideas with SeachLoom AI.">
+<meta name="description" content="Find promising keyword opportunities from a topic, keyword, or URL and identify SEO opportunities for your content strategy.">
 
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-<meta name="author" content="SeachLoom AI">
-
-<meta name="theme-color" content="#0b1220">
-
 <link rel="canonical" href="https://seachloomai.shop/tools/keyword-opportunity.html">
 
-<!-- Open Graph -->
 <meta property="og:title" content="Keyword Opportunity Finder | SeachLoom AI">
-<meta property="og:description" content="Find SEO keyword opportunities from a seed topic, keyword, audience or URL with SeachLoom AI.">
+<meta property="og:description" content="Find promising keyword opportunities from a topic, keyword, or URL and identify SEO opportunities for your content strategy.">
 <meta property="og:url" content="https://seachloomai.shop/tools/keyword-opportunity.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SeachLoom AI">
 
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Keyword Opportunity Finder | SeachLoom AI">
-<meta name="twitter:description" content="Find SEO keyword opportunities from a seed topic, keyword, audience or URL.">
+<meta name="twitter:description" content="Find promising keyword opportunities and SEO content opportunities from a topic, keyword, or URL.">
 
-<!-- Structured Data -->
+<link rel="stylesheet" href="../styles.css">
+
+<!-- WebApplication Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@graph": [
+  "@type": "WebApplication",
+  "name": "Keyword Opportunity Finder",
+  "url": "https://seachloomai.shop/tools/keyword-opportunity.html",
+  "description": "Find promising keyword opportunities and identify SEO opportunities from a topic, keyword, or URL.",
+  "applicationCategory": "SEOApplication",
+  "operatingSystem": "Web",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "Organization",
+    "name": "SeachLoom AI",
+    "url": "https://seachloomai.shop/"
+  }
+}
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-      "@type": "WebPage",
-      "@id": "https://seachloomai.shop/tools/keyword-opportunity.html#webpage",
-      "url": "https://seachloomai.shop/tools/keyword-opportunity.html",
-      "name": "Keyword Opportunity Finder",
-      "description": "Find SEO keyword opportunities from a seed topic, keyword, audience or URL.",
-      "isPartOf": {
-        "@type": "WebSite",
-        "@id": "https://seachloomai.shop/#website",
-        "name": "SeachLoom AI",
-        "url": "https://seachloomai.shop/"
+      "@type": "Question",
+      "name": "What is a keyword opportunity?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A keyword opportunity is a search term or topic that may provide a useful SEO opportunity when creating or improving content."
       }
     },
     {
-      "@type": "SoftwareApplication",
-      "name": "Keyword Opportunity Finder",
-      "url": "https://seachloomai.shop/tools/keyword-opportunity.html",
-      "applicationCategory": "SEO",
-      "applicationSubCategory": "Keyword Research Tool",
-      "operatingSystem": "Web",
-      "description": "Find promising SEO keyword opportunities from a seed topic and audience.",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
+      "@type": "Question",
+      "name": "How do I find keyword opportunities?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start with a topic, keyword, or URL and evaluate related search terms, user intent, content needs, and potential gaps. The SeachLoom AI Keyword Opportunity Finder provides a structured starting point for this analysis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why are keyword opportunities important for SEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Identifying keyword opportunities can help you discover topics worth targeting, expand existing content, and prioritize areas for further SEO research."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use a URL with the Keyword Opportunity Finder?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can enter a topic, keyword, or URL and optionally provide additional context such as audience, country, or page type."
       }
     }
   ]
 }
 </script>
 
-<link rel="stylesheet" href="../styles.css">
 </head>
+
+<body>
+
+<header class="nav">
+
+<a class="brand" href="../index.html" aria-label="SeachLoom AI homepage">
+  <span class="brandmark" aria-hidden="true">S</span>
+  <span>SeachLoom <b>AI</b></span>
+</a>
+
+<nav aria-label="Primary navigation">
+  <a href="../index.html#tools">Tools</a>
+  <a href="../index.html#learn">Learn</a>
+  <a href="../index.html#write">Write for Us</a>
+</nav>
+
+<div class="nav-actions">
+  <button class="ghost" type="button" data-auth-action>Log in</button>
+  <a class="amber" href="../index.html#tools">All tools</a>
+</div>
+
+</header>
+
+
+<!-- Optional advertising placements -->
+
+<div class="ad-slot ad-slot-top" data-ad-slot="top-banner" hidden>
+
+  <button
+    class="ad-slot-close"
+    type="button"
+    aria-label="Close advertisement"
+    onclick="removeAdSlot(this)"
+  >×</button>
+
+  <div
+    class="ad-slot-content"
+    aria-label="Top banner advertisement"
+  ></div>
+
+</div>
+
+
+<aside
+  class="ad-rail ad-rail-left"
+  data-ad-slot="left-rail"
+  hidden
+  aria-label="Left banner advertisement"
+>
+
+  <button
+    class="ad-slot-close"
+    type="button"
+    aria-label="Close advertisement"
+    onclick="removeAdSlot(this)"
+  >×</button>
+
+  <div class="ad-slot-content"></div>
+
+</aside>
+
+
+<aside
+  class="ad-rail ad-rail-right"
+  data-ad-slot="right-rail"
+  hidden
+  aria-label="Right banner advertisement"
+>
+
+  <button
+    class="ad-slot-close"
+    type="button"
+    aria-label="Close advertisement"
+    onclick="removeAdSlot(this)"
+  >×</button>
+
+  <div class="ad-slot-content"></div>
+
+</aside>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="tool-hero">
+
+  <div>
+
+    <div class="eyebrow">SeachLoom AI SEO Tool</div>
+
+    <h1>Keyword Opportunity Finder</h1>
+
+    <p class="lead">
+      Find promising keyword opportunities from a topic, keyword, or URL
+      and discover areas worth exploring in your SEO strategy.
+    </p>
+
+    <div class="tool-meta">
+      <span>✓ Free preview</span>
+      <span>✓ Full result protected</span>
+      <span>✓ Lifetime purchase</span>
+    </div>
+
+  </div>
+
+
+  <div
+    class="tool-visual"
+    aria-hidden="true"
+  >
+
+    <div class="tool-icon big-icon">🔎</div>
+
+    <div class="visual-lines">
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- TOOL WORKSPACE -->
+
+<section class="tool-workspace">
+
+  <div class="workspace-card">
+
+    <div class="workspace-head">
+
+      <div>
+
+        <div class="eyebrow">
+          Run a keyword opportunity analysis
+        </div>
+
+        <h2>
+          Find SEO keyword opportunities
+        </h2>
+
+      </div>
+
+      <span class="locked">
+        🔒 Full result protected
+      </span>
+
+    </div>
+
+
+    <form id="toolForm">
+
+      <label for="toolInput">
+
+        Topic, keyword or URL
+
+        <input
+          id="toolInput"
+          name="input"
+          type="text"
+          required
+          autocomplete="off"
+          placeholder="e.g. email marketing for small businesses"
+        >
+
+      </label>
+
+
+      <label for="context">
+
+        Optional context
+
+        <textarea
+          id="context"
+          name="context"
+          rows="4"
+          placeholder="Add audience, country, page type or other useful context"
+        ></textarea>
+
+      </label>
+
+
+      <button
+        class="amber big"
+        type="submit"
+      >
+        Find Keyword Opportunities
+      </button>
+
+    </form>
+
+
+    <div
+      id="result"
+      class="result-area"
+      aria-live="polite"
+    ></div>
+
+  </div>
+
+
+  <!-- LEARNING CARD -->
+
+  <aside class="learning-card">
+
+    <div class="lesson-icon">💡</div>
+
+    <h3>
+      How keyword opportunity analysis works
+    </h3>
+
+    <p>
+      Keyword opportunity research helps you discover search terms
+      and topics that may be worth evaluating for your SEO strategy.
+      The analysis can be used as a starting point for content planning
+      and deeper keyword research.
+    </p>
+
+    <ol>
+      <li>Enter a topic, keyword, or URL</li>
+      <li>Add optional audience or market context</li>
+      <li>Generate your free preview</li>
+      <li>Review the sample insights</li>
+      <li>Unlock the complete report</li>
+    </ol>
+
+  </aside>
+
+</section>
+
+
+<!-- SEO CONTENT -->
+
+<section class="tool-content">
+
+  <div class="workspace-card">
+
+    <div class="eyebrow">
+      Keyword opportunity research
+    </div>
+
+    <h2>
+      What is a keyword opportunity?
+    </h2>
+
+    <p>
+      A keyword opportunity is a search term, topic, or related query
+      that may be worth evaluating as part of an SEO strategy. Finding
+      these opportunities can help you expand your content plan,
+      improve existing pages, and identify subjects your audience
+      may be searching for.
+    </p>
+
+    <p>
+      Keyword opportunity research should be considered a starting
+      point rather than a guarantee of rankings or traffic. Strong
+      opportunities should be evaluated alongside search intent,
+      relevance, competition, content quality, and the needs of the
+      target audience.
+    </p>
+
+
+    <h2>
+      How to find keyword opportunities
+    </h2>
+
+    <p>
+      Start with a relevant seed topic, keyword, or URL. From there,
+      look for related topics and queries that closely match the
+      audience you want to reach. Search intent can then help determine
+      whether the opportunity is suitable for an informational,
+      commercial, navigational, or transactional page.
+    </p>
+
+    <p>
+      A useful keyword opportunity should be relevant to the website,
+      useful to the intended audience, and capable of supporting a
+      valuable piece of content.
+    </p>
+
+
+    <h2>
+      What makes a keyword opportunity useful?
+    </h2>
+
+    <div class="preview-stats">
+
+      <span>
+        Relevance
+        <b>Audience fit</b>
+      </span>
+
+      <span>
+        Intent
+        <b>Search need</b>
+      </span>
+
+      <span>
+        Content value
+        <b>Useful topic</b>
+      </span>
+
+      <span>
+        SEO potential
+        <b>Worth researching</b>
+      </span>
+
+    </div>
+
+
+    <h3>
+      Relevance
+    </h3>
+
+    <p>
+      The keyword should be closely connected to your website,
+      product, service, or area of expertise. A highly searched
+      keyword is not useful if it attracts the wrong audience.
+    </p>
+
+
+    <h3>
+      Search intent
+    </h3>
+
+    <p>
+      Understanding why someone searches for a term helps determine
+      whether your existing page or a new piece of content can
+      satisfy that need.
+    </p>
+
+
+    <h3>
+      Content value
+    </h3>
+
+    <p>
+      A good opportunity should allow you to create genuinely useful
+      content rather than simply adding another page that repeats
+      information already available elsewhere.
+    </p>
+
+
+    <h3>
+      SEO potential
+    </h3>
+
+    <p>
+      Keyword opportunities should be prioritized through further
+      research rather than judged from a single metric. Consider
+      relevance, intent, existing search results, content quality,
+      and your ability to provide a better answer.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- RELATED TOOLS -->
+
+<section class="tool-content">
+
+  <div class="workspace-card">
+
+    <div class="eyebrow">
+      Continue your SEO research
+    </div>
+
+    <h2>
+      Related SeachLoom AI tools
+    </h2>
+
+    <p>
+      Combine keyword opportunity research with keyword discovery,
+      clustering, and search intent analysis to create a more
+      structured SEO workflow.
+    </p>
+
+    <p>
+
+      <a href="keyword-researcher.html">
+        Keyword Researcher
+      </a>
+
+      &nbsp;·&nbsp;
+
+      <a href="keyword-clusterer.html">
+        Keyword Clusterer
+      </a>
+
+      &nbsp;·&nbsp;
+
+      <a href="search-intent.html">
+        Search Intent Analyzer
+      </a>
+
+      &nbsp;·&nbsp;
+
+      <a href="seo-brief.html">
+        SEO Brief Builder
+      </a>
+
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section class="tool-content">
+
+  <div class="workspace-card">
+
+    <div class="eyebrow">
+      Frequently asked questions
+    </div>
+
+    <h2>
+      Keyword Opportunity Finder FAQ
+    </h2>
+
+
+    <h3>
+      What is a keyword opportunity?
+    </h3>
+
+    <p>
+      A keyword opportunity is a search term or topic that may provide
+      a useful SEO opportunity when creating or improving content.
+    </p>
+
+
+    <h3>
+      How do I find keyword opportunities?
+    </h3>
+
+    <p>
+      Start with a topic, keyword, or URL and evaluate related search
+      terms, user intent, content needs, and potential gaps. The
+      SeachLoom AI Keyword Opportunity Finder provides a structured
+      starting point for this analysis.
+    </p>
+
+
+    <h3>
+      Why are keyword opportunities important for SEO?
+    </h3>
+
+    <p>
+      Identifying keyword opportunities can help you discover topics
+      worth targeting, expand existing content, and prioritize areas
+      for further SEO research.
+    </p>
+
+
+    <h3>
+      Can I use a URL with the Keyword Opportunity Finder?
+    </h3>
+
+    <p>
+      Yes. You can enter a topic, keyword, or URL and optionally
+      provide additional context such as audience, country, or
+      page type.
+    </p>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+  <div class="brand">
+
+    <span
+      class="brandmark"
+      aria-hidden="true"
+    >S</span>
+
+    <span>
+      SeachLoom <b>AI</b>
+    </span>
+
+  </div>
+
+  <p>
+    SEO + AI Search Visibility
+  </p>
+
+  <a href="../index.html">
+    Back to SeachLoom AI
+  </a>
+
+</footer>
+
+
+<script src="../ad-slots.js"></script>
+<script src="../auth.js"></script>
+
+
+<script>
+
+document.getElementById("toolForm").addEventListener("submit", async (e) => {
+
+  e.preventDefault();
+
+  const input =
+    document.getElementById("toolInput").value.trim();
+
+  const context =
+    document.getElementById("context").value.trim();
+
+  const result =
+    document.getElementById("result");
+
+
+  if (!input) {
+
+    result.innerHTML =
+      '<div class="preview-box"><b>Please enter a topic, keyword, or URL.</b></div>';
+
+    return;
+
+  }
+
+
+  result.innerHTML =
+    '<div class="loading">Finding keyword opportunities…</div>';
+
+
+  try {
+
+    const r = await fetch(
+      "../api/tool/preview",
+      {
+        method: "POST",
+
+        headers: {
+          "content-type": "application/json"
+        },
+
+        body: JSON.stringify({
+          tool: "keyword-opportunity",
+          input,
+          context
+        })
+      }
+    );
+
+
+    const data = await r.json();
+
+
+    result.innerHTML = `
+
+      <div class="preview-box">
+
+        <div class="eyebrow">
+          Free keyword opportunity preview
+        </div>
+
+        <h3>
+          Opportunity analysis prepared
+        </h3>
+
+        <p>
+          SeachLoom has prepared an initial keyword opportunity
+          analysis for <b>${escapeHtml(input)}</b>.
+        </p>
+
+
+        <div class="preview-stats">
+
+          <span>
+            Opportunities
+            <b>Available</b>
+          </span>
+
+          <span>
+            Detailed findings
+            <b>Locked</b>
+          </span>
+
+          <span>
+            Full report
+            <b>Locked</b>
+          </span>
+
+        </div>
+
+
+        <div class="blur-lines">
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+        </div>
+
+
+        <button
+          class="amber wide"
+          type="button"
+          onclick="openPaywall()"
+        >
+          🔒 Unlock full report
+        </button>
+
+      </div>
+
+    `;
+
+  } catch (err) {
+
+    result.innerHTML = `
+
+      <div class="preview-box">
+
+        <b>
+          Preview interface ready.
+        </b>
+
+        <p>
+          The production API still needs to be connected and deployed.
+        </p>
+
+      </div>
+
+    `;
+
+  }
+
+});
+
+
+function openPaywall() {
+
+  const result =
+    document.getElementById("result");
+
+
+  result.innerHTML = `
+
+    <div class="paywall">
+
+      <div class="eyebrow">
+        Protected result
+      </div>
+
+      <h3>
+        Unlock the complete keyword opportunity report
+      </h3>
+
+      <p>
+        Your preview is free. The detailed keyword opportunities,
+        recommendations, and exportable output are reserved for
+        verified purchase.
+      </p>
+
+
+      <div class="price">
+        Full report
+        <span>Lifetime purchase</span>
+      </div>
+
+
+      <button
+        class="amber wide"
+        type="button"
+        onclick="alert('Use the Buy button above, then activate your Gumroad license key here.')"
+      >
+        Continue to payment
+      </button>
+
+    </div>
+
+  `;
+
+}
+
+
+function escapeHtml(s) {
+
+  return s.replace(
+    /[&<>"']/g,
+    m => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#039;"
+    }[m])
+  );
+
+}
+
+</script>
+
+
+<script src="../config/gumroad-products.js"></script>
+<script src="../gumroad-paywall.js"></script>
+
+</body>
+</html>
