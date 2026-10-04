@@ -11,7 +11,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-RTPT6EP02Z');
 </script>
 
@@ -20,7 +19,12 @@
 
 <meta
   name="description"
-  content="Use the SeachLoom AI Content Outline Generator to create search-focused article outlines from your topic, keyword and search intent."
+  content="Create search-focused SEO article outlines with the SeachLoom AI Content Outline Generator. Build structured headings and content plans from a topic, keyword or search intent."
+>
+
+<meta
+  name="robots"
+  content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
 >
 
 <link
@@ -28,17 +32,15 @@
   href="https://seachloomai.shop/tools/content-outline.html"
 >
 
-<meta name="robots" content="index, follow">
-
 <!-- Open Graph -->
 <meta
   property="og:title"
-  content="Content Outline Generator — SeachLoom AI"
+  content="Content Outline Generator — Create SEO Article Outlines | SeachLoom AI"
 >
 
 <meta
   property="og:description"
-  content="Create search-focused article outlines from a topic, keyword and search intent."
+  content="Create search-focused SEO article outlines from a topic, keyword or search intent with SeachLoom AI."
 >
 
 <meta
@@ -46,19 +48,84 @@
   content="https://seachloomai.shop/tools/content-outline.html"
 >
 
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="SeachLoom AI">
+<meta
+  property="og:type"
+  content="website"
+>
 
-<!-- Structured Data -->
+<meta
+  property="og:site_name"
+  content="SeachLoom AI"
+>
+
+<!-- Twitter -->
+<meta
+  name="twitter:card"
+  content="summary"
+>
+
+<meta
+  name="twitter:title"
+  content="Content Outline Generator — SeachLoom AI"
+>
+
+<meta
+  name="twitter:description"
+  content="Create structured, search-focused SEO article outlines from your topic, keyword or search intent."
+>
+
+<!-- WebApplication Structured Data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "SeachLoom AI Content Outline Generator",
   "url": "https://seachloomai.shop/tools/content-outline.html",
-  "description": "A content outline generator for creating search-focused article outlines from topics and search intent.",
+  "description": "A content outline generator for creating structured, search-focused SEO article outlines from topics, keywords and search intent.",
   "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Web"
+  "applicationSubCategory": "SEO Tool",
+  "operatingSystem": "Web",
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "Organization",
+    "name": "SeachLoom AI",
+    "url": "https://seachloomai.shop/"
+  }
+}
+</script>
+
+<!-- FAQ Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is an SEO content outline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An SEO content outline is a structured plan for an article that organizes topics, headings, subtopics and search intent before the content is written."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why use a content outline for SEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A structured content outline can help organize important topics, align an article with search intent and create a clearer plan for writing useful search-focused content."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What can the SeachLoom Content Outline Generator create?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The SeachLoom Content Outline Generator is designed to create a structured starting point for an SEO article based on a topic, keyword or search intent."
+      }
+    }
+  ]
 }
 </script>
 
@@ -70,20 +137,36 @@
 
 <header class="nav">
 
-<a class="brand" href="../index.html">
+<a
+  class="brand"
+  href="../index.html"
+  aria-label="SeachLoom AI home"
+>
   <span class="brandmark" aria-hidden="true">S</span>
   <span>SeachLoom <b>AI</b></span>
 </a>
 
-<nav>
+<nav aria-label="Primary navigation">
   <a href="../index.html#tools">Tools</a>
   <a href="../index.html#learn">Learn</a>
   <a href="../index.html#write">Write for Us</a>
 </nav>
 
 <div class="nav-actions">
-  <button class="ghost" data-auth-action>Log in</button>
-  <a class="amber" href="../index.html#tools">All tools</a>
+  <button
+    class="ghost"
+    data-auth-action
+    type="button"
+  >
+    Log in
+  </button>
+
+  <a
+    class="amber"
+    href="../index.html#tools"
+  >
+    All tools
+  </a>
 </div>
 
 </header>
@@ -152,12 +235,14 @@
 
 <main>
 
+<!-- HERO -->
+
 <section class="tool-hero">
 
 <div>
 
 <div class="eyebrow">
-  SeachLoom AI Tool
+  SeachLoom AI SEO Tool
 </div>
 
 <h1>
@@ -165,7 +250,7 @@
 </h1>
 
 <p class="lead">
-  Create a search-focused article outline from a topic and intent.
+  Create a structured, search-focused SEO article outline from a topic, keyword or search intent.
 </p>
 
 <div class="tool-meta">
@@ -177,7 +262,10 @@
 </div>
 
 
-<div class="tool-visual">
+<div
+  class="tool-visual"
+  aria-hidden="true"
+>
 
 <div class="tool-icon big-icon">
   🔎
@@ -195,7 +283,12 @@
 </section>
 
 
-<section class="tool-workspace">
+<!-- TOOL WORKSPACE -->
+
+<section
+  class="tool-workspace"
+  aria-labelledby="tool-heading"
+>
 
 <div class="workspace-card">
 
@@ -207,7 +300,7 @@
   Run a preview
 </div>
 
-<h2>
+<h2 id="tool-heading">
   Enter your information
 </h2>
 
@@ -222,25 +315,29 @@
 
 <form id="toolForm">
 
-<label>
+<label for="toolInput">
   Topic, keyword or URL
 
   <input
     id="toolInput"
+    name="input"
+    type="text"
     required
+    autocomplete="off"
     placeholder="Enter your topic, keyword or URL"
   >
 
 </label>
 
 
-<label>
+<label for="context">
   Optional context
 
   <textarea
     id="context"
+    name="context"
     rows="4"
-    placeholder="Add audience, country, page type or other useful context"
+    placeholder="Add audience, country, page type, search intent or other useful context"
   ></textarea>
 
 </label>
@@ -259,6 +356,7 @@
 <div
   id="result"
   class="result-area"
+  aria-live="polite"
 ></div>
 
 </div>
@@ -266,26 +364,217 @@
 
 <aside class="learning-card">
 
-<div class="lesson-icon">
+<div
+  class="lesson-icon"
+  aria-hidden="true"
+>
   💡
 </div>
 
 <h3>
-  How this tool works
+  How the Content Outline Generator Works
 </h3>
 
 <p>
-  SeachLoom first generates a limited preview so users can understand the value of the analysis. The complete report is intentionally protected.
+  SeachLoom creates a limited preview to help you understand the value of a structured SEO content plan. The complete report is protected for verified purchases.
 </p>
 
 <ol>
-  <li>Enter your data</li>
-  <li>Generate preview</li>
+  <li>Enter your topic, keyword or URL</li>
+  <li>Add optional context</li>
+  <li>Generate your free preview</li>
   <li>Review sample insights</li>
-  <li>Unlock the full report</li>
+  <li>Unlock the complete report</li>
 </ol>
 
 </aside>
+
+</section>
+
+
+<!-- SEO INFORMATION -->
+
+<section class="content-section">
+
+<div class="eyebrow">
+  SEO Content Planning
+</div>
+
+<h2>
+  Build Better SEO Content Outlines
+</h2>
+
+<p>
+  A strong content outline gives writers a structured plan before an article is created. It can organize the main topic, supporting subtopics, headings and search intent into a clear content structure.
+</p>
+
+<p>
+  The SeachLoom AI Content Outline Generator is designed to help you create a search-focused starting point from a topic, keyword or URL. Use the generated outline as a planning resource before writing and optimizing your content.
+</p>
+
+<div class="content-grid">
+
+<article>
+<h3>
+  Organize Your Main Topics
+</h3>
+
+<p>
+  Create a logical structure that helps organize the primary topic and important supporting subjects.
+</p>
+
+</article>
+
+
+<article>
+<h3>
+  Align Content With Search Intent
+</h3>
+
+<p>
+  Consider the purpose behind a search query so your article structure is better aligned with what users are looking for.
+</p>
+
+</article>
+
+
+<article>
+<h3>
+  Plan Before You Write
+</h3>
+
+<p>
+  Start with a structured content plan before drafting the complete article, helping keep the writing focused and organized.
+</p>
+
+</article>
+
+</div>
+
+</section>
+
+
+<!-- RELATED TOOLS -->
+
+<section class="content-section">
+
+<div class="eyebrow">
+  Related SEO Tools
+</div>
+
+<h2>
+  Continue Your SEO Content Workflow
+</h2>
+
+<p>
+  A content outline can be combined with keyword research, search intent analysis and content gap research to create a stronger SEO content workflow.
+</p>
+
+<div class="content-grid">
+
+<article>
+
+<h3>
+  <a href="content-gap.html">
+    Content Gap Analyzer
+  </a>
+</h3>
+
+<p>
+Identify missing topics and potential content opportunities before building your article plan.
+</p>
+
+</article>
+
+
+<article>
+
+<h3>
+  <a href="keyword-researcher.html">
+    Keyword Researcher
+  </a>
+</h3>
+
+<p>
+Generate keyword ideas and discover potential opportunities around a seed topic.
+</p>
+
+</article>
+
+
+<article>
+
+<h3>
+  <a href="search-intent.html">
+    Search Intent Analyzer
+  </a>
+</h3>
+
+<p>
+Understand whether a query is informational, commercial, navigational or transactional.
+</p>
+
+</article>
+
+</div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section class="content-section">
+
+<div class="eyebrow">
+  Frequently Asked Questions
+</div>
+
+<h2>
+  Content Outline Generator FAQ
+</h2>
+
+
+<div class="faq-list">
+
+<details>
+
+<summary>
+What is an SEO content outline?
+</summary>
+
+<p>
+An SEO content outline is a structured plan for an article that organizes topics, headings, subtopics and search intent before the content is written.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+Why use a content outline for SEO?
+</summary>
+
+<p>
+A structured content outline can help organize important topics, align an article with search intent and create a clearer plan for writing useful search-focused content.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+What can the SeachLoom Content Outline Generator create?
+</summary>
+
+<p>
+The SeachLoom Content Outline Generator is designed to create a structured starting point for an SEO article based on a topic, keyword or search intent.
+</p>
+
+</details>
+
+</div>
 
 </section>
 
@@ -296,7 +585,10 @@
 
 <div class="brand">
 
-<span class="brandmark" aria-hidden="true">
+<span
+  class="brandmark"
+  aria-hidden="true"
+>
   S
 </span>
 
@@ -335,6 +627,14 @@ document.getElementById("toolForm").addEventListener("submit", async (e) => {
   const result =
     document.getElementById("result");
 
+  if (!input) {
+
+    result.innerHTML =
+      '<div class="preview-box"><b>Please enter a topic, keyword or URL.</b></div>';
+
+    return;
+  }
+
   result.innerHTML =
     '<div class="loading">Analyzing your request…</div>';
 
@@ -365,23 +665,23 @@ document.getElementById("toolForm").addEventListener("submit", async (e) => {
         </div>
 
         <h3>
-          Preview generated
+          Content Outline Preview Generated
         </h3>
 
         <p>
-          SeachLoom has prepared an initial analysis for
+          SeachLoom has prepared an initial SEO content outline analysis for
           <b>${escapeHtml(input)}</b>.
         </p>
 
         <div class="preview-stats">
 
           <span>
-            Opportunities
+            Outline opportunities
             <b>Available</b>
           </span>
 
           <span>
-            Detailed findings
+            Detailed structure
             <b>Locked</b>
           </span>
 
@@ -401,6 +701,7 @@ document.getElementById("toolForm").addEventListener("submit", async (e) => {
 
         <button
           class="amber wide"
+          type="button"
           onclick="openPaywall()"
         >
           🔒 Unlock full report
@@ -432,11 +733,11 @@ function openPaywall() {
       </div>
 
       <h3>
-        Unlock the complete report
+        Unlock the Complete SEO Content Outline
       </h3>
 
       <p>
-        Your preview is free. The detailed report, recommendations and exportable output are reserved for verified purchase.
+        Your preview is free. The detailed outline, recommendations and exportable output are reserved for verified purchase.
       </p>
 
       <div class="price">
@@ -446,6 +747,7 @@ function openPaywall() {
 
       <button
         class="amber wide"
+        type="button"
         onclick="alert('Use the Buy button above, then activate your Gumroad license key here.')"
       >
         Continue to payment
