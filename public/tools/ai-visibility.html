@@ -5,22 +5,26 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<!-- Google tag (gtag.js) -->
+<!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RTPT6EP02Z"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-RTPT6EP02Z');
 </script>
 
 <!-- Primary SEO -->
-<title>AI Search Visibility Tracker — Track AI Search Visibility | SeachLoom AI</title>
+<title>AI Search Visibility Tracker – Track AI Search Visibility | SeachLoom AI</title>
 
 <meta
   name="description"
-  content="Use the SeachLoom AI Search Visibility Tracker to analyze and track opportunities for improving visibility in AI-powered search."
+  content="Track AI search visibility opportunities and analyze how your content can improve visibility in AI-powered and generative search with SeachLoom AI."
+>
+
+<meta
+  name="robots"
+  content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
 >
 
 <link
@@ -28,17 +32,15 @@
   href="https://seachloomai.shop/tools/ai-visibility.html"
 >
 
-<meta name="robots" content="index, follow">
-
 <!-- Open Graph -->
 <meta
   property="og:title"
-  content="AI Search Visibility Tracker — SeachLoom AI"
+  content="AI Search Visibility Tracker – SeachLoom AI"
 >
 
 <meta
   property="og:description"
-  content="Analyze and track opportunities for improving visibility in AI-powered search."
+  content="Track AI search visibility opportunities and identify ways to improve visibility in AI-powered and generative search."
 >
 
 <meta
@@ -46,19 +48,49 @@
   content="https://seachloomai.shop/tools/ai-visibility.html"
 >
 
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="SeachLoom AI">
+<meta
+  property="og:type"
+  content="website"
+>
+
+<meta
+  property="og:site_name"
+  content="SeachLoom AI"
+>
+
+<!-- Twitter -->
+<meta
+  name="twitter:card"
+  content="summary"
+>
+
+<meta
+  name="twitter:title"
+  content="AI Search Visibility Tracker – SeachLoom AI"
+>
+
+<meta
+  name="twitter:description"
+  content="Analyze AI search visibility opportunities and improve your presence in AI-powered search."
+>
 
 <!-- Structured Data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "SeachLoom AI Search Visibility Tracker",
+  "name": "AI Search Visibility Tracker",
   "url": "https://seachloomai.shop/tools/ai-visibility.html",
-  "description": "An AI search visibility tool for analyzing opportunities to improve visibility in AI-powered search.",
+  "description": "An AI search visibility tracker for analyzing opportunities to improve visibility in AI-powered and generative search.",
   "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Web"
+  "applicationSubCategory": "SEO Tool",
+  "operatingSystem": "Web",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "Organization",
+    "name": "SeachLoom AI",
+    "url": "https://seachloomai.shop/"
+  }
 }
 </script>
 
@@ -70,20 +102,32 @@
 
 <header class="nav">
 
-<a class="brand" href="../index.html">
+<a class="brand" href="../index.html" aria-label="SeachLoom AI homepage">
   <span class="brandmark" aria-hidden="true">S</span>
   <span>SeachLoom <b>AI</b></span>
 </a>
 
-<nav>
+<nav aria-label="Main navigation">
   <a href="../index.html#tools">Tools</a>
   <a href="../index.html#learn">Learn</a>
   <a href="../index.html#write">Write for Us</a>
 </nav>
 
 <div class="nav-actions">
-  <button class="ghost" data-auth-action>Log in</button>
-  <a class="amber" href="../index.html#tools">All tools</a>
+  <button
+    class="ghost"
+    data-auth-action
+    type="button"
+  >
+    Log in
+  </button>
+
+  <a
+    class="amber"
+    href="../index.html#tools"
+  >
+    All tools
+  </a>
 </div>
 
 </header>
@@ -165,7 +209,7 @@
 </h1>
 
 <p class="lead">
-  Track a future-ready workflow for visibility in AI-powered search.
+  Track AI search visibility opportunities and identify ways to improve your presence in AI-powered and generative search.
 </p>
 
 <div class="tool-meta">
@@ -179,11 +223,17 @@
 
 <div class="tool-visual">
 
-<div class="tool-icon big-icon">
+<div
+  class="tool-icon big-icon"
+  aria-hidden="true"
+>
   🔎
 </div>
 
-<div class="visual-lines">
+<div
+  class="visual-lines"
+  aria-hidden="true"
+>
   <i></i>
   <i></i>
   <i></i>
@@ -208,7 +258,7 @@
 </div>
 
 <h2>
-  Enter your information
+  Check your AI search visibility
 </h2>
 
 </div>
@@ -227,7 +277,9 @@
 
   <input
     id="toolInput"
+    type="text"
     required
+    autocomplete="off"
     placeholder="Enter your topic, keyword or URL"
   >
 
@@ -259,6 +311,7 @@
 <div
   id="result"
   class="result-area"
+  aria-live="polite"
 ></div>
 
 </div>
@@ -266,7 +319,10 @@
 
 <aside class="learning-card">
 
-<div class="lesson-icon">
+<div
+  class="lesson-icon"
+  aria-hidden="true"
+>
   💡
 </div>
 
@@ -275,17 +331,44 @@
 </h3>
 
 <p>
-  SeachLoom first generates a limited preview so users can understand the value of the analysis. The complete report is intentionally protected.
+  SeachLoom analyzes your topic, keyword or URL to identify opportunities related to AI-powered search visibility. The free preview shows sample insights while the complete analysis remains protected.
 </p>
 
 <ol>
-  <li>Enter your data</li>
-  <li>Generate preview</li>
-  <li>Review sample insights</li>
-  <li>Unlock the full report</li>
+  <li>Enter your topic, keyword or URL</li>
+  <li>Generate your free preview</li>
+  <li>Review sample AI search insights</li>
+  <li>Unlock the complete report</li>
 </ol>
 
 </aside>
+
+</section>
+
+
+<!-- Supporting SEO content -->
+
+<section class="tool-content">
+
+<h2>
+  Improve Your AI Search Visibility
+</h2>
+
+<p>
+  AI search visibility is becoming an important part of modern SEO. As users increasingly discover information through AI-powered search and generative answer experiences, businesses need to understand where their content can become more visible.
+</p>
+
+<p>
+  The SeachLoom AI Search Visibility Tracker helps identify potential opportunities for improving content visibility across AI-focused search experiences. Use your topic, keyword or URL to begin an initial analysis.
+</p>
+
+<h2>
+  Why Track AI Search Visibility?
+</h2>
+
+<p>
+  Traditional search rankings are only one part of today's search landscape. Tracking AI search visibility can help you identify content opportunities, improve topical coverage and develop a stronger strategy for generative search.
+</p>
 
 </section>
 
@@ -296,7 +379,10 @@
 
 <div class="brand">
 
-<span class="brandmark" aria-hidden="true">
+<span
+  class="brandmark"
+  aria-hidden="true"
+>
   S
 </span>
 
@@ -365,18 +451,18 @@ document.getElementById("toolForm").addEventListener("submit", async (e) => {
         </div>
 
         <h3>
-          Preview generated
+          AI Search Visibility Preview Generated
         </h3>
 
         <p>
-          SeachLoom has prepared an initial analysis for
+          SeachLoom has prepared an initial AI search visibility analysis for
           <b>${escapeHtml(input)}</b>.
         </p>
 
         <div class="preview-stats">
 
           <span>
-            Opportunities
+            Visibility opportunities
             <b>Available</b>
           </span>
 
@@ -401,6 +487,7 @@ document.getElementById("toolForm").addEventListener("submit", async (e) => {
 
         <button
           class="amber wide"
+          type="button"
           onclick="openPaywall()"
         >
           🔒 Unlock full report
@@ -432,11 +519,11 @@ function openPaywall() {
       </div>
 
       <h3>
-        Unlock the complete report
+        Unlock the Complete AI Search Visibility Report
       </h3>
 
       <p>
-        Your preview is free. The detailed report, recommendations and exportable output are reserved for verified purchase.
+        Your preview is free. The detailed visibility findings, recommendations and exportable report are reserved for verified purchase.
       </p>
 
       <div class="price">
@@ -446,6 +533,7 @@ function openPaywall() {
 
       <button
         class="amber wide"
+        type="button"
         onclick="alert('Use the Buy button above, then activate your Gumroad license key here.')"
       >
         Continue to payment
