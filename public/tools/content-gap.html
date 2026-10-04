@@ -11,16 +11,20 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-RTPT6EP02Z');
 </script>
 
 <!-- Primary SEO -->
-<title>Content Gap Analyzer — Find Content Opportunities | SeachLoom AI</title>
+<title>Content Gap Analyzer — Find SEO Content Opportunities | SeachLoom AI</title>
 
 <meta
   name="description"
-  content="Use the SeachLoom AI Content Gap Analyzer to identify missing topics, content gaps and coverage opportunities for your SEO content strategy."
+  content="Find missing topics, content gaps and SEO opportunities with the SeachLoom AI Content Gap Analyzer. Discover areas where your content can improve its search coverage."
+>
+
+<meta
+  name="robots"
+  content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
 >
 
 <link
@@ -28,17 +32,15 @@
   href="https://seachloomai.shop/tools/content-gap.html"
 >
 
-<meta name="robots" content="index, follow">
-
 <!-- Open Graph -->
 <meta
   property="og:title"
-  content="Content Gap Analyzer — SeachLoom AI"
+  content="Content Gap Analyzer — Find SEO Content Opportunities | SeachLoom AI"
 >
 
 <meta
   property="og:description"
-  content="Identify missing topics, content gaps and coverage opportunities for your SEO content strategy."
+  content="Find missing topics, content gaps and SEO opportunities to improve your content coverage and search visibility."
 >
 
 <meta
@@ -46,19 +48,84 @@
   content="https://seachloomai.shop/tools/content-gap.html"
 >
 
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="SeachLoom AI">
+<meta
+  property="og:type"
+  content="website"
+>
 
-<!-- Structured Data -->
+<meta
+  property="og:site_name"
+  content="SeachLoom AI"
+>
+
+<!-- Twitter -->
+<meta
+  name="twitter:card"
+  content="summary"
+>
+
+<meta
+  name="twitter:title"
+  content="Content Gap Analyzer — SeachLoom AI"
+>
+
+<meta
+  name="twitter:description"
+  content="Identify missing topics and SEO content opportunities with the SeachLoom AI Content Gap Analyzer."
+>
+
+<!-- WebApplication Structured Data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "SeachLoom AI Content Gap Analyzer",
   "url": "https://seachloomai.shop/tools/content-gap.html",
-  "description": "A content gap analyzer for identifying missing topics and content opportunities for SEO.",
+  "description": "A content gap analysis tool for identifying missing topics, content opportunities and search coverage improvements.",
   "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Web"
+  "applicationSubCategory": "SEO Tool",
+  "operatingSystem": "Web",
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "Organization",
+    "name": "SeachLoom AI",
+    "url": "https://seachloomai.shop/"
+  }
+}
+</script>
+
+<!-- FAQ Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a content gap analysis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A content gap analysis identifies missing topics, unanswered questions and areas where a website's content may need broader or deeper coverage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who can use a content gap analyzer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SEO professionals, content writers, website owners and marketers can use content gap analysis to identify opportunities for improving their content strategy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What can a content gap analysis help identify?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A content gap analysis can help identify missing topics, related subtopics, coverage opportunities and areas that may deserve additional content."
+      }
+    }
+  ]
 }
 </script>
 
@@ -70,19 +137,19 @@
 
 <header class="nav">
 
-<a class="brand" href="../index.html">
+<a class="brand" href="../index.html" aria-label="SeachLoom AI home">
   <span class="brandmark" aria-hidden="true">S</span>
   <span>SeachLoom <b>AI</b></span>
 </a>
 
-<nav>
+<nav aria-label="Primary navigation">
   <a href="../index.html#tools">Tools</a>
   <a href="../index.html#learn">Learn</a>
   <a href="../index.html#write">Write for Us</a>
 </nav>
 
 <div class="nav-actions">
-  <button class="ghost" data-auth-action>Log in</button>
+  <button class="ghost" data-auth-action type="button">Log in</button>
   <a class="amber" href="../index.html#tools">All tools</a>
 </div>
 
@@ -152,12 +219,14 @@
 
 <main>
 
+<!-- HERO -->
+
 <section class="tool-hero">
 
 <div>
 
 <div class="eyebrow">
-  SeachLoom AI Tool
+  SeachLoom AI SEO Tool
 </div>
 
 <h1>
@@ -165,7 +234,7 @@
 </h1>
 
 <p class="lead">
-  Identify missing topics and coverage opportunities for a content plan.
+  Find missing topics, content gaps and SEO opportunities to improve your search coverage.
 </p>
 
 <div class="tool-meta">
@@ -177,7 +246,10 @@
 </div>
 
 
-<div class="tool-visual">
+<div
+  class="tool-visual"
+  aria-hidden="true"
+>
 
 <div class="tool-icon big-icon">
   🔎
@@ -195,7 +267,12 @@
 </section>
 
 
-<section class="tool-workspace">
+<!-- TOOL WORKSPACE -->
+
+<section
+  class="tool-workspace"
+  aria-labelledby="tool-heading"
+>
 
 <div class="workspace-card">
 
@@ -204,10 +281,10 @@
 <div>
 
 <div class="eyebrow">
-  Run a preview
+  Run a content gap analysis
 </div>
 
-<h2>
+<h2 id="tool-heading">
   Enter your information
 </h2>
 
@@ -222,23 +299,27 @@
 
 <form id="toolForm">
 
-<label>
+<label for="toolInput">
   Topic, keyword or URL
 
   <input
     id="toolInput"
+    name="input"
+    type="text"
     required
+    autocomplete="off"
     placeholder="Enter your topic, keyword or URL"
   >
 
 </label>
 
 
-<label>
+<label for="context">
   Optional context
 
   <textarea
     id="context"
+    name="context"
     rows="4"
     placeholder="Add audience, country, page type or other useful context"
   ></textarea>
@@ -259,6 +340,7 @@
 <div
   id="result"
   class="result-area"
+  aria-live="polite"
 ></div>
 
 </div>
@@ -266,26 +348,194 @@
 
 <aside class="learning-card">
 
-<div class="lesson-icon">
+<div class="lesson-icon" aria-hidden="true">
   💡
 </div>
 
 <h3>
-  How this tool works
+  How Content Gap Analysis Works
 </h3>
 
 <p>
-  SeachLoom first generates a limited preview so users can understand the value of the analysis. The complete report is intentionally protected.
+  SeachLoom analyzes your topic or URL and prepares a limited preview of potential content opportunities. The complete analysis is protected for verified purchases.
 </p>
 
 <ol>
-  <li>Enter your data</li>
-  <li>Generate preview</li>
+  <li>Enter your topic, keyword or URL</li>
+  <li>Add optional context</li>
+  <li>Generate your free preview</li>
   <li>Review sample insights</li>
-  <li>Unlock the full report</li>
+  <li>Unlock the complete report</li>
 </ol>
 
 </aside>
+
+</section>
+
+
+<!-- SEO INFORMATION -->
+
+<section class="content-section">
+
+<div class="eyebrow">
+  Content Gap Analysis
+</div>
+
+<h2>
+  Find Content Opportunities You May Be Missing
+</h2>
+
+<p>
+  A content gap analysis helps identify topics, questions and areas that may not be fully covered by your existing content. Finding these opportunities can help you build a more complete content strategy and improve topical coverage.
+</p>
+
+<p>
+  The SeachLoom AI Content Gap Analyzer is designed to give you an initial view of potential content opportunities around a topic, keyword or URL. Use the preview to understand where additional research and content development may be valuable.
+</p>
+
+<div class="content-grid">
+
+<article>
+<h3>Discover Missing Topics</h3>
+<p>
+Identify subjects and related areas that may deserve additional coverage within your content strategy.
+</p>
+</article>
+
+<article>
+<h3>Improve Content Coverage</h3>
+<p>
+Use content gap insights to determine where existing pages may need broader or deeper topical coverage.
+</p>
+</article>
+
+<article>
+<h3>Build Better Content Plans</h3>
+<p>
+Turn potential gaps into ideas for future articles, supporting pages, FAQs and other useful content.
+</p>
+</article>
+
+</div>
+
+</section>
+
+
+<!-- RELATED TOOLS -->
+
+<section class="content-section">
+
+<div class="eyebrow">
+  Related SEO Tools
+</div>
+
+<h2>
+  Continue Your SEO Research
+</h2>
+
+<p>
+  Content gap analysis works best when combined with keyword research, search intent analysis and structured content planning.
+</p>
+
+<div class="content-grid">
+
+<article>
+<h3>
+  <a href="keyword-researcher.html">
+    Keyword Researcher
+  </a>
+</h3>
+
+<p>
+Generate keyword ideas and identify potential opportunities around a seed topic.
+</p>
+
+</article>
+
+
+<article>
+<h3>
+  <a href="search-intent.html">
+    Search Intent Analyzer
+  </a>
+</h3>
+
+<p>
+Understand whether a search query is informational, commercial, navigational or transactional.
+</p>
+
+</article>
+
+
+<article>
+<h3>
+  <a href="seo-brief.html">
+    SEO Brief Builder
+  </a>
+</h3>
+
+<p>
+Build a structured SEO content brief before creating your next piece of content.
+</p>
+
+</article>
+
+</div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section class="content-section">
+
+<div class="eyebrow">
+  Frequently Asked Questions
+</div>
+
+<h2>
+  Content Gap Analyzer FAQ
+</h2>
+
+
+<div class="faq-list">
+
+<details>
+<summary>
+What is a content gap analysis?
+</summary>
+
+<p>
+A content gap analysis identifies missing topics, unanswered questions and areas where a website's content may need broader or deeper coverage.
+</p>
+
+</details>
+
+
+<details>
+<summary>
+Who can use a content gap analyzer?
+</summary>
+
+<p>
+SEO professionals, content writers, website owners and marketers can use content gap analysis to identify opportunities for improving their content strategy.
+</p>
+
+</details>
+
+
+<details>
+<summary>
+What can a content gap analysis help identify?
+</summary>
+
+<p>
+A content gap analysis can help identify missing topics, related subtopics, coverage opportunities and areas that may deserve additional content.
+</p>
+
+</details>
+
+</div>
 
 </section>
 
@@ -296,7 +546,10 @@
 
 <div class="brand">
 
-<span class="brandmark" aria-hidden="true">
+<span
+  class="brandmark"
+  aria-hidden="true"
+>
   S
 </span>
 
@@ -335,6 +588,13 @@ document.getElementById("toolForm").addEventListener("submit", async (e) => {
   const result =
     document.getElementById("result");
 
+  if (!input) {
+    result.innerHTML =
+      '<div class="preview-box"><b>Please enter a topic, keyword or URL.</b></div>';
+
+    return;
+  }
+
   result.innerHTML =
     '<div class="loading">Analyzing your request…</div>';
 
@@ -365,11 +625,11 @@ document.getElementById("toolForm").addEventListener("submit", async (e) => {
         </div>
 
         <h3>
-          Preview generated
+          Content Gap Preview Generated
         </h3>
 
         <p>
-          SeachLoom has prepared an initial analysis for
+          SeachLoom has prepared an initial content gap analysis for
           <b>${escapeHtml(input)}</b>.
         </p>
 
@@ -401,6 +661,7 @@ document.getElementById("toolForm").addEventListener("submit", async (e) => {
 
         <button
           class="amber wide"
+          type="button"
           onclick="openPaywall()"
         >
           🔒 Unlock full report
@@ -432,11 +693,11 @@ function openPaywall() {
       </div>
 
       <h3>
-        Unlock the complete report
+        Unlock the Complete Content Gap Report
       </h3>
 
       <p>
-        Your preview is free. The detailed report, recommendations and exportable output are reserved for verified purchase.
+        Your preview is free. The detailed content gap findings, recommendations and exportable output are reserved for verified purchase.
       </p>
 
       <div class="price">
@@ -446,6 +707,7 @@ function openPaywall() {
 
       <button
         class="amber wide"
+        type="button"
         onclick="alert('Use the Buy button above, then activate your Gumroad license key here.')"
       >
         Continue to payment
