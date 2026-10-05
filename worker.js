@@ -1067,15 +1067,16 @@ if (url.pathname === "/sitemap.xml") {
 
 /* Serve normal website assets */
 if (env.ASSETS && typeof env.ASSETS.fetch === "function") {
-  return env.ASSETS.fetch(request);
-}
 
-/* Safe fallback if ASSETS is unavailable */
-return new Response("Not Found", {
-  status: 404,
-  headers: {
-    "content-type": "text/plain; charset=utf-8"
+  const assetUrl = new URL(request.url);
+
+  if (assetUrl.pathname === "/") {
+    assetUrl.pathname = "/index.html";
   }
+
+  return env.ASSETS.fetch(
+    new Request(assetUrl.toString(), request)
+  );
 });
           } catch (e) {
       return json(
