@@ -1064,7 +1064,12 @@ if (url.pathname === "/sitemap.xml") {
     }
   });
 }
-
+/* Serve homepage at root URL */
+if (url.pathname === "/" && env.ASSETS && typeof env.ASSETS.fetch === "function") {
+  const homepageUrl = new URL("/index.html", request.url);
+  const homepageRequest = new Request(homepageUrl, request);
+  return env.ASSETS.fetch(homepageRequest);
+}
 /* Serve normal website assets */
 if (env.ASSETS && typeof env.ASSETS.fetch === "function") {
 
