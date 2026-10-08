@@ -1082,15 +1082,11 @@ if (env.ASSETS && typeof env.ASSETS.fetch === "function") {
   return env.ASSETS.fetch(
     new Request(assetUrl.toString(), request)
   );
-});
-          } catch (e) {
-      return json(
-        {
-          ok: false,
-          message: e?.message || "Server error."
-        },
-        500
-      );
+}
+} catch (e) {
+  return json(
+    {
+      ok: false,
+      message: e?.message || "Server error."
     }
-  }
-};
+  );
