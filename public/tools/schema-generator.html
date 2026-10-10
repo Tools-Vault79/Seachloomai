@@ -1,61 +1,309 @@
+<!doctype html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-
-<!-- Primary SEO -->
-<title>Schema Markup Generator – Create Structured Data | SeachLoom AI</title>
-
-<meta
-  name="description"
-  content="Create structured data and Schema.org markup for supported content types. Generate SEO-friendly schema starting points with SeachLoom AI's Schema Markup Generator."
->
-
-<meta
-  name="robots"
-  content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
->
-
-<link
-  rel="canonical"
-  href="https://seachloomai.shop/tools/schema-generator.html"
->
-
-<!-- Open Graph -->
-<meta
-  property="og:title"
-  content="Schema Markup Generator – Create Structured Data | SeachLoom AI"
->
-
-<meta
-  property="og:description"
-  content="Create structured data and Schema.org markup for supported content types with SeachLoom AI."
->
-
-<meta
-  property="og:url"
-  content="https://seachloomai.shop/tools/schema-generator.html"
->
-
+<title>Free Schema Markup Generator | Structured Data Tool — SeachLoom AI</title>
+<meta name="description" content="Create a starting point for Schema.org structured data with SeachLoom AI's free schema markup generator. Explore JSON-LD for common webpage content types and validate before publishing.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://seachloomai.shop/tools/schema-generator.html">
+<meta name="theme-color" content="#0f766e">
+<meta property="og:title" content="Free Schema Markup Generator | SeachLoom AI">
+<meta property="og:description" content="Plan Schema.org structured data and JSON-LD for webpages with SeachLoom AI's schema markup generator.">
+<meta property="og:url" content="https://seachloomai.shop/tools/schema-generator.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SeachLoom AI">
-
-<!-- Twitter / X -->
-<meta
-  name="twitter:card"
-  content="summary"
->
-
-<meta
-  name="twitter:title"
-  content="Schema Markup Generator – Create Structured Data | SeachLoom AI"
->
-
-<meta
-  name="twitter:description"
-  content="Create structured data and Schema.org markup for supported content types."
->
-
-<!-- Styles -->
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free Schema Markup Generator | SeachLoom AI">
+<meta name="twitter:description" content="Create a structured data starting point and learn how to review JSON-LD before adding it to a webpage.">
 <link rel="stylesheet" href="../styles.css">
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "SeachLoom AI Schema Markup Generator",
+  "url": "https://seachloomai.shop/tools/schema-generator.html",
+  "description": "A web tool for planning Schema.org structured data and JSON-LD markup for webpages.",
+  "applicationCategory": "BusinessApplication",
+  "applicationSubCategory": "SEO Software",
+  "operatingSystem": "Web",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "description": "Free preview available"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "SeachLoom AI",
+    "url": "https://seachloomai.shop/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is schema markup?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Schema markup is structured data added to a webpage to describe its content in a format understood by supported search engines and other systems."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is JSON-LD?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "JSON-LD is a format for expressing linked data using JSON. It is commonly used to add Schema.org structured data to webpages."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does schema markup guarantee rich results or higher rankings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Valid structured data does not guarantee rich results or higher rankings. Eligibility depends on search engine guidelines, supported features, page content and other factors."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How should I validate generated schema?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Check that the structured data accurately describes visible page content, confirm that the JSON is valid, and use relevant structured data testing tools before publishing."
+      }
+    }
+  ]
+}
+</script>
 </head>
+<body>
+<header class="nav">
+  <a class="brand" href="../index.html" aria-label="SeachLoom AI homepage">
+    <span class="brandmark" aria-hidden="true">S</span>
+    <span>SeachLoom <b>AI</b></span>
+  </a>
+  <nav aria-label="Primary navigation">
+    <a href="../index.html#tools">Tools</a>
+    <a href="../index.html#learn">Learn</a>
+    <a href="../index.html#write">Write for Us</a>
+  </nav>
+  <div class="nav-actions">
+    <button class="ghost" type="button" data-auth-action>Log in</button>
+    <a class="amber" href="../index.html#tools">All tools</a>
+  </div>
+</header>
+
+<div class="ad-slot ad-slot-top" data-ad-slot="top-banner" hidden>
+  <button class="ad-slot-close" type="button" aria-label="Close advertisement" onclick="removeAdSlot(this)">×</button>
+  <div class="ad-slot-content" aria-label="Top banner advertisement"></div>
+</div>
+<aside class="ad-rail ad-rail-left" data-ad-slot="left-rail" hidden aria-label="Left banner advertisement">
+  <button class="ad-slot-close" type="button" aria-label="Close advertisement" onclick="removeAdSlot(this)">×</button>
+  <div class="ad-slot-content"></div>
+</aside>
+<aside class="ad-rail ad-rail-right" data-ad-slot="right-rail" hidden aria-label="Right banner advertisement">
+  <button class="ad-slot-close" type="button" aria-label="Close advertisement" onclick="removeAdSlot(this)">×</button>
+  <div class="ad-slot-content"></div>
+</aside>
+
+<main>
+<section class="tool-hero">
+  <div>
+    <div class="eyebrow">SeachLoom AI SEO Tool</div>
+    <h1>Free Schema Markup Generator</h1>
+    <p class="lead">Plan structured data for your webpage with a clear starting point for Schema.org JSON-LD. Always check that generated markup matches the content users can see.</p>
+    <div class="tool-meta">
+      <span>✓ Free preview</span>
+      <span>✓ Full result protected</span>
+      <span>✓ Lifetime purchase</span>
+    </div>
+  </div>
+  <div class="tool-visual" aria-hidden="true">
+    <div class="tool-icon big-icon">{ }</div>
+    <div class="visual-lines"><i></i><i></i><i></i><i></i></div>
+  </div>
+</section>
+
+<section class="tool-workspace">
+  <div class="workspace-card">
+    <div class="workspace-head">
+      <div>
+        <div class="eyebrow">Plan structured data</div>
+        <h2>Describe the page or content type</h2>
+      </div>
+      <span class="locked">🔒 Full result protected</span>
+    </div>
+    <form id="toolForm">
+      <label for="toolInput">Page URL, topic or content description
+        <textarea id="toolInput" name="input" rows="3" required placeholder="e.g. a local bakery's contact and opening-hours page"></textarea>
+      </label>
+      <label for="schemaType">Schema type to explore
+        <select id="schemaType" name="schemaType">
+          <option value="Organization">Organization</option>
+          <option value="WebSite">WebSite</option>
+          <option value="WebPage">WebPage</option>
+          <option value="Article">Article</option>
+          <option value="Product">Product</option>
+          <option value="LocalBusiness">LocalBusiness</option>
+          <option value="Event">Event</option>
+          <option value="Service">Service</option>
+          <option value="Person">Person</option>
+          <option value="FAQPage">FAQPage</option>
+        </select>
+      </label>
+      <label for="context">Optional context
+        <textarea id="context" name="context" rows="3" placeholder="Add page URL, business details, author, product information or other facts that appear on the page"></textarea>
+      </label>
+      <button class="amber big" type="submit">Generate free preview</button>
+    </form>
+    <div id="result" class="result-area" aria-live="polite"></div>
+  </div>
+  <aside class="learning-card">
+    <div class="lesson-icon" aria-hidden="true">💡</div>
+    <h3>How schema markup planning works</h3>
+    <p>Describe your page and choose a relevant structured data type. Treat suggestions as a draft: confirm every property against real page content and current search engine guidelines.</p>
+    <ol>
+      <li>Describe the page and its purpose</li>
+      <li>Select a relevant schema type</li>
+      <li>Add optional factual context</li>
+      <li>Generate your free preview</li>
+      <li>Validate before publishing</li>
+    </ol>
+  </aside>
+</section>
+
+<section class="content-section">
+  <div class="eyebrow">Structured data guide</div>
+  <h2>What Is Schema Markup?</h2>
+  <p>Schema markup is structured data that describes the content of a webpage using a defined vocabulary such as Schema.org. It can help supported systems interpret entities and page details, including information about organizations, articles, products, services and events.</p>
+  <p>Structured data should accurately reflect information visible on the page. Do not add properties, reviews, prices, business details or other facts that cannot be substantiated by the actual content.</p>
+
+  <h2>What Is JSON-LD?</h2>
+  <p>JSON-LD is a way to express linked data using JSON. It is commonly added to a webpage in a script element with the type <code>application/ld+json</code>. Keeping the data separate from visible HTML can make it easier to maintain, but the markup still needs to be accurate and valid.</p>
+
+  <h2>Choose a Schema Type That Fits the Page</h2>
+  <h3>Organization and WebSite</h3>
+  <p>Organization markup can describe a real organization and its verified details. WebSite markup describes a website. Use only information that belongs to the site or organization being represented.</p>
+  <h3>Article</h3>
+  <p>Article markup can describe editorial content, including a headline, author and publication dates when those details are accurate and available on the page.</p>
+  <h3>Product and Service</h3>
+  <p>Product or Service markup should represent the actual offering. Include only applicable and verifiable attributes, and follow the relevant search engine requirements if you are aiming for a supported search feature.</p>
+  <h3>LocalBusiness</h3>
+  <p>LocalBusiness markup may describe a real local business and its accurate contact or location details. Never invent addresses, opening hours or other business information.</p>
+  <h3>FAQPage and other types</h3>
+  <p>Choose types based on the actual content and current eligibility rules. Adding a schema type does not guarantee a rich result; some search features are limited to particular content or site types.</p>
+
+  <h2>How to Validate Schema Markup</h2>
+  <ol>
+    <li>Confirm that the chosen schema type matches the page.</li>
+    <li>Check every property against visible, accurate page content.</li>
+    <li>Validate JSON syntax and required properties for the intended feature.</li>
+    <li>Test the live URL after publishing and fix reported errors.</li>
+    <li>Monitor important pages in Google Search Console where applicable.</li>
+  </ol>
+
+  <h2>Common Structured Data Mistakes</h2>
+  <ul>
+    <li>Using a schema type that does not fit the page.</li>
+    <li>Adding information that is not visible or cannot be verified.</li>
+    <li>Publishing invalid JSON or incorrect property values.</li>
+    <li>Assuming valid markup guarantees rich results or better rankings.</li>
+    <li>Failing to retest markup after page content changes.</li>
+  </ul>
+
+  <h2>Related SeachLoom AI SEO Tools</h2>
+  <ul>
+    <li><a href="onpage-audit.html">On-Page SEO Audit</a> — review page-level SEO elements.</li>
+    <li><a href="meta-generator.html">Meta Tag Generator</a> — draft page titles and descriptions.</li>
+    <li><a href="seo-brief.html">SEO Brief Builder</a> — plan search-focused content.</li>
+    <li><a href="content-outline.html">Content Outline Generator</a> — organize article sections.</li>
+    <li><a href="internal-links.html">Internal Link Suggestions</a> — plan relevant internal links.</li>
+  </ul>
+</section>
+
+<section class="content-section">
+  <div class="eyebrow">Frequently asked questions</div>
+  <h2>Schema Markup Generator FAQ</h2>
+  <div class="faq-list">
+    <details><summary>What is schema markup?</summary><p>Schema markup is structured data added to a webpage to describe its content in a format understood by supported search engines and other systems.</p></details>
+    <details><summary>What is JSON-LD?</summary><p>JSON-LD is a format for expressing linked data using JSON. It is commonly used to add Schema.org structured data to webpages.</p></details>
+    <details><summary>Does schema markup guarantee rich results or higher rankings?</summary><p>No. Valid structured data does not guarantee rich results or higher rankings. Eligibility depends on search engine guidelines, supported features, page content and other factors.</p></details>
+    <details><summary>How should I validate generated schema?</summary><p>Check that the structured data accurately describes visible page content, confirm that the JSON is valid, and use relevant structured data testing tools before publishing.</p></details>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="brand"><span class="brandmark" aria-hidden="true">S</span><span>SeachLoom <b>AI</b></span></div>
+  <p>SEO + AI Search Visibility</p>
+  <a href="../index.html">Back to SeachLoom AI</a>
+</footer>
+
+<script src="../ad-slots.js"></script>
+<script src="../auth.js"></script>
+<script>
+document.getElementById("toolForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const input = document.getElementById("toolInput").value.trim();
+  const context = document.getElementById("context").value.trim();
+  const schemaType = document.getElementById("schemaType").value;
+  const result = document.getElementById("result");
+  if (!input) {
+    result.innerHTML = '<div class="preview-box"><b>Please describe the page or content.</b></div>';
+    return;
+  }
+  result.innerHTML = '<div class="loading">Preparing your schema markup preview…</div>';
+  try {
+    const r = await fetch("../api/tool/preview", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ tool: "schema-generator", input, context: context + "\nRequested schema type: " + schemaType })
+    });
+    if (!r.ok) throw new Error("Schema preview request failed.");
+    await r.json();
+    result.innerHTML = `
+      <div class="preview-box">
+        <div class="eyebrow">Free structured data preview</div>
+        <h3>Schema markup preview prepared</h3>
+        <p>SeachLoom has prepared an initial schema planning preview for <b>${escapeHtml(input)}</b>.</p>
+        <div class="preview-stats">
+          <span>Selected schema type<b>${escapeHtml(schemaType)}</b></span>
+          <span>Structured data guidance<b>Preview</b></span>
+          <span>Complete recommendations<b>Locked</b></span>
+        </div>
+        <div class="blur-lines"><i></i><i></i><i></i><i></i></div>
+        <button class="amber wide" type="button" onclick="openPaywall()">🔒 Unlock full report</button>
+      </div>`;
+  } catch (err) {
+    result.innerHTML = '<div class="preview-box"><b>Unable to generate the preview.</b><p>Please try again. If the problem continues, the preview API may need attention.</p></div>';
+  }
+});
+function openPaywall() {
+  document.getElementById("result").innerHTML = `
+    <div class="paywall">
+      <div class="eyebrow">Protected result</div>
+      <h3>Unlock the complete schema markup report</h3>
+      <p>Your preview is free. Detailed structured data recommendations, property guidance and exportable results are reserved for verified purchase.</p>
+      <div class="price">Full report<span>Lifetime purchase</span></div>
+      <button class="amber wide" type="button" onclick="alert('Use the Buy button above, then activate your SeachLoom AI purchase here.')">Continue to payment</button>
+    </div>`;
+}
+function escapeHtml(s) {
+  return s.replace(/[&<>"']/g, m => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
+  }[m]));
+}
+</script>
+<script src="../config/gumroad-products.js"></script>
+<script src="../gumroad-paywall.js"></script>
+</body>
+</html>
