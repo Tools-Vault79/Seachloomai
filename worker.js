@@ -120,7 +120,8 @@ Sitemap: https://seachloomai.shop/sitemap.xml`,
         );
       }
 
-    } catch (e) {
+     }
+};
 
       return json(
         {
