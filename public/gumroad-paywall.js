@@ -14,7 +14,8 @@ window.openPaywall=async function(){
  result.innerHTML=`<div class="paywall">
  <div class="eyebrow">Protected result</div><h3>Unlock ${esc(product.name)}</h3>
  <p>Purchase this tool once for lifetime access. No credits and no recurring subscription.</p>
- <a class="amber wide" href="${esc(product.checkoutUrl)}" target="_blank" rel="noopener">Buy lifetime access →</a>
+ <div class="price" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;margin:14px 0;border:1px solid #d8e3e1;border-radius:12px;background:#f5faf9"><strong>Lifetime access</strong><span style="font-weight:700;color:#0f766e">Price shown at checkout</span></div>
+ <a class="amber wide" href="${esc(product.checkoutUrl)}" target="_blank" rel="noopener">Continue to payment →</a>
  <div style="height:14px"></div>
  <div class="eyebrow">Already purchased?</div>
  ${me.authenticated?`<p>You're signed in as <b>${esc(me.user.email)}</b>. Enter the Gumroad license key from your receipt to activate lifetime access on this account.</p>`:
