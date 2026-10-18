@@ -100,13 +100,13 @@ Sitemap: https://seachloomai.shop/sitemap.xml`,
       }
 
 
+      
       /* Serve normal website assets */
       if (
         env.ASSETS &&
         typeof env.ASSETS.fetch === "function"
       ) {
-        const assetUrl =
-          new URL(request.url);
+        const assetUrl = new URL(request.url);
 
         if (assetUrl.pathname === "/") {
           assetUrl.pathname = "/index.html";
@@ -119,19 +119,5 @@ Sitemap: https://seachloomai.shop/sitemap.xml`,
           )
         );
       }
-
-     }
-};
-
-      return json(
-        {
-          ok: false,
-          message:
-            e?.message || "Server error."
-        }
-      );
-
     }
-
-  }
 };
