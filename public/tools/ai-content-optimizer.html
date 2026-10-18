@@ -466,7 +466,7 @@ Payment-ready
 <button
 class="amber wide"
 type="button"
-onclick="alert('Payment provider integration is the next production step.')">
+onclick="openPaywall()">
 
 Continue to payment
 
@@ -495,6 +495,9 @@ m => ({
 }
 
 </script>
+
+<script src="../config/gumroad-products.js"></script>
+<script src="../gumroad-paywall.js"></script>
 
 </body>
 </html>
