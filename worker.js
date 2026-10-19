@@ -1065,9 +1065,13 @@ if (url.pathname === "/sitemap.xml") {
   });
 }
 
-/* Serve normal website assets */
+/* Serve normal website assets.
+   html_handling is set to "none", so explicitly map the root URL to index.html. */
 if (env.ASSETS && typeof env.ASSETS.fetch === "function") {
-  return env.ASSETS.fetch(request);
+  const assetRequest = url.pathname === "/" && request.method === "GET"
+    ? new Request(new URL("/index.html", url.origin), request)
+    : request;
+  return env.ASSETS.fetch(assetRequest);
 }
 
 /* Safe fallback if ASSETS is unavailable */
