@@ -122,9 +122,9 @@
     <h1>Free Schema Markup Generator</h1>
     <p class="lead">Plan structured data for your webpage with a clear starting point for Schema.org JSON-LD. Always check that generated markup matches the content users can see.</p>
     <div class="tool-meta">
-      <span>✓ Free preview</span>
-      <span>✓ Full result protected</span>
-      <span>✓ Lifetime purchase</span>
+      <span>✓ Free JSON-LD draft</span>
+      <span>✓ Copyable output</span>
+      <span>✓ No account required</span>
     </div>
   </div>
   <div class="tool-visual" aria-hidden="true">
@@ -140,7 +140,7 @@
         <div class="eyebrow">Plan structured data</div>
         <h2>Describe the page or content type</h2>
       </div>
-      <span class="locked">🔒 Full result protected</span>
+      <span class="locked">Free · No account required</span>
     </div>
     <form id="toolForm">
       <label for="toolInput">Page URL, topic or content description
@@ -163,7 +163,7 @@
       <label for="context">Optional context
         <textarea id="context" name="context" rows="3" placeholder="Add page URL, business details, author, product information or other facts that appear on the page"></textarea>
       </label>
-      <button class="amber big" type="submit">Generate free preview</button>
+      <button class="amber big" type="submit">Generate JSON-LD</button>
     </form>
     <div id="result" class="result-area" aria-live="polite"></div>
   </div>
@@ -175,7 +175,7 @@
       <li>Describe the page and its purpose</li>
       <li>Select a relevant schema type</li>
       <li>Add optional factual context</li>
-      <li>Generate your free preview</li>
+      <li>Generate and copy JSON-LD</li>
       <li>Validate before publishing</li>
     </ol>
   </aside>
@@ -251,57 +251,26 @@
 <script src="../ad-slots.js"></script>
 <script src="../auth.js"></script>
 <script>
-document.getElementById("toolForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const input = document.getElementById("toolInput").value.trim();
-  const context = document.getElementById("context").value.trim();
-  const schemaType = document.getElementById("schemaType").value;
-  const result = document.getElementById("result");
-  if (!input) {
-    result.innerHTML = '<div class="preview-box"><b>Please describe the page or content.</b></div>';
-    return;
-  }
-  result.innerHTML = '<div class="loading">Preparing your schema markup preview…</div>';
-  try {
-    const r = await fetch("../api/tool/preview", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ tool: "schema-generator", input, context: context + "\nRequested schema type: " + schemaType })
-    });
-    if (!r.ok) throw new Error("Schema preview request failed.");
-    await r.json();
-    result.innerHTML = `
-      <div class="preview-box">
-        <div class="eyebrow">Free structured data preview</div>
-        <h3>Schema markup preview prepared</h3>
-        <p>SeachLoom has prepared an initial schema planning preview for <b>${escapeHtml(input)}</b>.</p>
-        <div class="preview-stats">
-          <span>Selected schema type<b>${escapeHtml(schemaType)}</b></span>
-          <span>Structured data guidance<b>Preview</b></span>
-          <span>Complete recommendations<b>Locked</b></span>
-        </div>
-        <div class="blur-lines"><i></i><i></i><i></i><i></i></div>
-        <button class="amber wide" type="button" onclick="openPaywall()">🔒 Unlock full report</button>
-      </div>`;
-  } catch (err) {
-    result.innerHTML = '<div class="preview-box"><b>Unable to generate the preview.</b><p>Please try again. If the problem continues, the preview API may need attention.</p></div>';
-  }
+function escapeHtml(s){return String(s).replace(/[&<>"\']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","\'":"&#039;"}[m]));}
+function factsFrom(s){const o={};s.split(/\n+/).forEach(line=>{const m=line.match(/^\s*([a-zA-Z][\w -]{1,35})\s*:\s*(.+)\s*$/);if(m)o[m[1].trim().toLowerCase()]=m[2].trim();});return o;}
+function validUrl(s){try{const u=new URL(s);return /^https?:$/.test(u.protocol)?u.href:"";}catch(e){return "";}}
+document.getElementById("toolForm").addEventListener("submit",e=>{
+e.preventDefault();const input=document.getElementById("toolInput").value.trim();const context=document.getElementById("context").value.trim();const type=document.getElementById("schemaType").value;const result=document.getElementById("result");
+if(!input){result.innerHTML="<div class=\"preview-box\"><b>Please describe the page or content.</b></div>";return;}
+const f=factsFrom(context);const url=validUrl(f.url||f.website||f["page url"]||input);const data={"@context":"https://schema.org","@type":type};
+data.name=f.name||f.title||input;
+if(url&&["Organization","LocalBusiness","WebPage","WebSite","Article","Product","Service","Event"].includes(type))data.url=url;
+if(f.description)data.description=f.description;
+if(type==="Article"){if(f.headline)data.headline=f.headline;if(f.author)data.author={"@type":"Person","name":f.author};if(f["date published"])data.datePublished=f["date published"];}
+if(type==="Product"){if(f.brand)data.brand={"@type":"Brand","name":f.brand};if(validUrl(f.image))data.image=validUrl(f.image);}
+if(type==="Organization"||type==="LocalBusiness"){if(f.email)data.email=f.email;if(f.phone||f.telephone)data.telephone=f.phone||f.telephone;if(f.address)data.address={"@type":"PostalAddress","streetAddress":f.address};}
+if(type==="Service"&&f.provider)data.provider={"@type":"Organization","name":f.provider};
+if(type==="Event"){if(f["start date"])data.startDate=f["start date"];if(f.location)data.location={"@type":"Place","name":f.location};}
+if(type==="FAQPage"){data.mainEntity=f.question&&f.answer?[{"@type":"Question","name":f.question,"acceptedAnswer":{"@type":"Answer","text":f.answer}}]:[];}
+const json=JSON.stringify(data,null,2);const warnings=[];if(!url&&type!=="Person"&&type!=="FAQPage")warnings.push("Add a real URL in context as URL: https://example.com/page.");if(type==="FAQPage"&&!data.mainEntity.length)warnings.push("For FAQPage, add Question: ... and Answer: ... in the context.");if(type==="Article"&&!f.author)warnings.push("Add Author: ... if the article has a visible credited author.");
+result.innerHTML="<div class=\"preview-box\"><div class=\"eyebrow\">Free JSON-LD draft</div><h3>Generated structured data</h3><p>This template uses only details you supplied. It does not fetch your URL or guarantee search-feature eligibility. Confirm every field matches visible page content.</p><div class=\"preview-stats\"><span>Schema type<b>"+escapeHtml(type)+"</b></span><span>JSON syntax<b>Generated</b></span><span>Source<b>User-provided details</b></span></div>"+(warnings.length?"<h3>Review before publishing</h3><ul>"+warnings.map(w=>"<li>"+escapeHtml(w)+"</li>").join("")+"</ul>":"")+"<label for=\"schemaOutput\">JSON-LD output</label><textarea id=\"schemaOutput\" rows=\"16\" readonly style=\"width:100%;font-family:monospace;white-space:pre;overflow:auto\">"+escapeHtml(json)+"</textarea><button class=\"ghost\" type=\"button\" id=\"copySchema\">Copy JSON-LD</button><h3>Validate before publishing</h3><ul><li>Only mark up accurate information visible on the page.</li><li>Use the <a href=\"https://validator.schema.org/\" target=\"_blank\" rel=\"noopener noreferrer\">Schema.org Validator</a> and, where relevant, the <a href=\"https://search.google.com/test/rich-results\" target=\"_blank\" rel=\"noopener noreferrer\">Google Rich Results Test</a>.</li><li>Valid markup does not guarantee rich results or higher rankings.</li></ul></div>";
+document.getElementById("copySchema").addEventListener("click",async()=>{try{await navigator.clipboard.writeText(json);alert("JSON-LD copied.");}catch(err){alert("Copy unavailable. Select and copy the JSON-LD manually.");}});
 });
-function openPaywall() {
-  document.getElementById("result").innerHTML = `
-    <div class="paywall">
-      <div class="eyebrow">Protected result</div>
-      <h3>Unlock the complete schema markup report</h3>
-      <p>Your preview is free. Detailed structured data recommendations, property guidance and exportable results are reserved for verified purchase.</p>
-      <div class="price">Full report<span>Lifetime purchase</span></div>
-      <button class="amber wide" type="button" onclick="openPaywall()">Continue to payment</button>
-    </div>`;
-}
-function escapeHtml(s) {
-  return s.replace(/[&<>"']/g, m => ({
-    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
-  }[m]));
-}
 </script>
 <script src="../config/gumroad-products.js"></script>
 <script src="../gumroad-paywall.js"></script>
