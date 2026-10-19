@@ -16,6 +16,26 @@ const TOOL_SLUGS = new Set([
   "geo-optimizer"
 ]);
 
+// A license must be tied to the product configured for that tool.
+// Keep these permalinks synchronized with public/config/gumroad-products.js.
+const TOOL_PRODUCT_PERMALINKS = {
+  "ai-content-optimizer": "AIContentOptimizer",
+  "keyword-researcher": "KeywordResearcher",
+  "keyword-clusterer": "KeywordClustering",
+  "search-intent": "SearchIntentAnalyzer",
+  "keyword-opportunity": "KeywordOpportunityFinder",
+  "seo-brief": "SEOBriefBuilder",
+  "content-gap": "ContentGapAnalyzer",
+  "content-outline": "ContentOutlineGenerator",
+  "onpage-audit": "OnPageSEOAudit",
+  "meta-generator": "MetaTagGenerator",
+  "internal-links": "InternalLinkSuggestions",
+  "schema-generator": "SchemaMarkupGenerator",
+  "ai-visibility": "AISearchVisibilityTracker",
+  "ai-citations": "AICitationAnalyzer",
+  "geo-optimizer": "AISearchContentOptimizer"
+};
+
 function json(data, status = 200, headers = {}) {
   return new Response(JSON.stringify(data), {
     status,
@@ -632,6 +652,17 @@ export default {
                 "Product and license key are required."
             },
             400
+          );
+        }
+
+        const expectedProduct = TOOL_PRODUCT_PERMALINKS[tool_slug];
+        if (!expectedProduct || product_permalink !== expectedProduct) {
+          return json(
+            {
+              ok: false,
+              message: "This Gumroad product is not configured to unlock the selected tool."
+            },
+            403
           );
         }
 
