@@ -242,7 +242,13 @@
 <script src="../ad-slots.js"></script>
 <script src="../auth.js"></script>
 <script>
-document.getElementById("toolForm").addEventListener("submit", async (e) => {
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
+}
+function cleanTopic(s) {
+  return String(s).replace(/^https?:\/\//i,"").replace(/^www\./i,"").replace(/\.[a-z]{2,}(\/.*)?$/i,"").replace(/[\/_-]+/g," ").replace(/\s+/g," ").trim().replace(/[?#].*$/,"");
+}
+document.getElementById("toolForm").addEventListener("submit", (e) => {
   e.preventDefault();
   const input = document.getElementById("toolInput").value.trim();
   const context = document.getElementById("context").value.trim();
@@ -251,46 +257,28 @@ document.getElementById("toolForm").addEventListener("submit", async (e) => {
     result.innerHTML = '<div class="preview-box"><b>Please enter a page topic, keyword or URL.</b></div>';
     return;
   }
-  result.innerHTML = '<div class="loading">Preparing your metadata preview…</div>';
-  try {
-    const r = await fetch("../api/tool/preview", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ tool: "meta-generator", input, context })
-    });
-    if (!r.ok) throw new Error("Metadata preview request failed.");
-    await r.json();
-    result.innerHTML = `
-      <div class="preview-box">
-        <div class="eyebrow">Free metadata preview</div>
-        <h3>Metadata preview prepared</h3>
-        <p>SeachLoom has prepared an initial metadata preview for <b>${escapeHtml(input)}</b>.</p>
-        <div class="preview-stats">
-          <span>Title suggestion<b>Preview</b></span>
-          <span>Meta description<b>Preview</b></span>
-          <span>Complete recommendations<b>Locked</b></span>
-        </div>
-        <div class="blur-lines"><i></i><i></i><i></i><i></i></div>
-        <button class="amber wide" type="button" onclick="openPaywall()">🔒 Unlock full report</button>
-      </div>`;
-  } catch (err) {
-    result.innerHTML = '<div class="preview-box"><b>Unable to generate the preview.</b><p>Please try again. If the problem continues, the preview API may need attention.</p></div>';
-  }
+  const topic = cleanTopic(input) || input;
+  const lines = context.split(/\n+/).map(x => x.trim()).filter(Boolean);
+  const audience = (context.match(/(?:audience|for)\s*:\s*([^\n;]+)/i)||[])[1] || "";
+  const brand = (context.match(/(?:brand|site|website)\s*:\s*([^\n;]+)/i)||[])[1] || "SeachLoom AI";
+  const titleBase = topic.charAt(0).toUpperCase()+topic.slice(1);
+  let title = titleBase;
+  if (audience && !titleBase.toLowerCase().includes(audience.toLowerCase())) title += " for " + audience;
+  if (title.length < 45) title += " | " + brand;
+  if (title.length > 60) title = title.slice(0,57).replace(/\s+\S*$/,"") + "...";
+  let description = "Explore " + topic + ". Find practical guidance, key details and helpful next steps to make an informed decision.";
+  if (audience) description = "Explore " + topic + " for " + audience + ". Get practical guidance, key details and useful next steps.";
+  if (description.length < 120) description += " Learn what matters and how to get started.";
+  if (description.length > 160) description = description.slice(0,157).replace(/\s+\S*$/,"") + "...";
+  const titleClass = title.length >= 30 && title.length <= 60 ? "Within suggested range" : "Review length";
+  const descClass = description.length >= 120 && description.length <= 160 ? "Within suggested range" : "Review length";
+  result.innerHTML = '<div class="preview-box"><div class="eyebrow">Rule-based metadata draft</div><h3>Suggested page metadata</h3><p>This draft is generated from your topic and optional context using simple templates. It does not use an AI model or inspect a live webpage. Edit it to match the page accurately.</p><div class="preview-stats"><span>Title length<b>'+title.length+' characters</b></span><span>Title check<b>'+titleClass+'</b></span><span>Description length<b>'+description.length+' characters</b></span><span>Description check<b>'+descClass+'</b></span></div><h3>SEO title</h3><p><code>'+escapeHtml(title)+'</code></p><button class="ghost" type="button" data-copy="title">Copy title</button><h3>Meta description</h3><p>'+escapeHtml(description)+'</p><button class="ghost" type="button" data-copy="description">Copy description</button><h3>Before publishing</h3><ul><li>Make sure the title and description accurately describe the page.</li><li>Use the main phrase naturally; do not stuff keywords.</li><li>Check that the description is unique and useful.</li><li>Search engines may generate a different title link or snippet.</li></ul><p><small>Character ranges are guidelines, not ranking factors or guarantees.</small></p></div>';
+  result.querySelector('[data-copy="title"]').addEventListener("click",()=>copyText(title));
+  result.querySelector('[data-copy="description"]').addEventListener("click",()=>copyText(description));
 });
-function openPaywall() {
-  document.getElementById("result").innerHTML = `
-    <div class="paywall">
-      <div class="eyebrow">Protected result</div>
-      <h3>Unlock the complete metadata report</h3>
-      <p>Your preview is free. Detailed title and description suggestions, review notes and exportable results are reserved for verified purchase.</p>
-      <div class="price">Full report<span>Lifetime purchase</span></div>
-      <button class="amber wide" type="button" onclick="openPaywall()">Continue to payment</button>
-    </div>`;
-}
-function escapeHtml(s) {
-  return s.replace(/[&<>"']/g, m => ({
-    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
-  }[m]));
+async function copyText(value) {
+  try { await navigator.clipboard.writeText(value); alert("Copied to clipboard."); }
+  catch (e) { alert("Copy is unavailable in this browser. Select the text and copy it manually."); }
 }
 </script>
 <script src="../config/gumroad-products.js"></script>
