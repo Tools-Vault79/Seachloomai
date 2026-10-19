@@ -1040,6 +1040,10 @@ if (url.pathname === "/sitemap.xml") {
   <url>
     <loc>https://seachloomai.shop/</loc>
   </url>
+  <url><loc>https://seachloomai.shop/about.html</loc></url>
+  <url><loc>https://seachloomai.shop/contact.html</loc></url>
+  <url><loc>https://seachloomai.shop/privacy-policy.html</loc></url>
+  <url><loc>https://seachloomai.shop/terms.html</loc></url>
   <url>
     <loc>https://seachloomai.shop/tools/ai-content-optimizer.html</loc>
   </url>
