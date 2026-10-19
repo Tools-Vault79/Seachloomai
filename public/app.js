@@ -21,13 +21,18 @@ const grid=document.getElementById("toolGrid");
 function renderTools(list=tools){
  grid.innerHTML=list.map((t,i)=>{
    const product=(window.SEACHLOOM_GUMROAD_PRODUCTS||{})[t[0]];
-   const checkout=product && product.checkoutUrl ? product.checkoutUrl : `tools/${t[0]}.html`;
+   const checkout=product && typeof product.checkoutUrl==="string" && /^https:\/\/[^\s]+$/i.test(product.checkoutUrl)
+     ? product.checkoutUrl
+     : "";
+   const purchaseAction=checkout
+     ? `<a class="tool-btn" style="margin-top:8px" href="${escapeHtml(checkout)}" target="_blank" rel="noopener noreferrer">Buy lifetime access <span>↗</span></a>`
+     : `<p class="muted" style="margin:10px 0 0;font-size:.85rem">Checkout not available yet</p>`;
    return `<article class="tool-card">
  <div class="tool-icon">${icons[i%icons.length]}</div>
  <span class="tool-tag">AI + SEO</span>
  <h3>${t[1]}</h3><p>${t[2]}</p>
  <a class="tool-btn" href="tools/${t[0]}.html">Open tool <span>→</span></a>
- <a class="tool-btn" style="margin-top:8px" href="${checkout}" target="_blank" rel="noopener">Buy lifetime access <span>↗</span></a>
+ ${purchaseAction}
  </article>`;
  }).join("");
 }
