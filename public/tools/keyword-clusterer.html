@@ -1,4 +1,3 @@
-```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -157,8 +156,8 @@
 
       <form id="toolForm">
         <label>
-          Keywords, topic or URL
-          <textarea id="toolInput" required rows="4" autocomplete="off" placeholder="Enter keywords, one per line, or provide a topic or URL"></textarea>
+          Keywords (one per line)
+          <textarea id="toolInput" required rows="5" autocomplete="off" placeholder="keyword clustering tool&#10;free keyword clustering tool&#10;keyword cluster analysis"></textarea>
         </label>
 
         <label>
@@ -276,60 +275,84 @@
 <script src="../auth.js"></script>
 
 <script>
-document.getElementById("toolForm").addEventListener("submit", async (e) => {
+document.getElementById("toolForm").addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const input = document.getElementById("toolInput").value.trim();
-  const context = document.getElementById("context").value.trim();
+  const rawInput = document.getElementById("toolInput").value;
   const result = document.getElementById("result");
+  const keywords = [...new Map(
+    rawInput.split(/\r?\n/)
+      .map((value) => value.trim())
+      .filter(Boolean)
+      .map((value) => [value.toLowerCase(), value])
+  ).values()];
 
-  if (!input) return;
-
-  result.innerHTML = '<div class="loading">Clustering your keywords…</div>';
-
-  try {
-    const response = await fetch("../api/tool/preview", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({
-        tool: "keyword-clusterer",
-        input,
-        context
-      })
-    });
-
-    if (!response.ok) {
-      throw new Error("Preview request failed");
-    }
-
-    const data = await response.json();
-
-    if (data && data.error) {
-      throw new Error(data.error);
-    }
-
+  if (keywords.length < 2) {
     result.innerHTML = `
       <div class="preview-box">
-        <div class="eyebrow">Free preview</div>
-        <h3>Keyword clustering preview</h3>
-        <p>Your request for <b>${escapeHtml(input)}</b> was submitted successfully.</p>
-        <div class="preview-stats">
-          <span>Topic clusters <b>Preview</b></span>
-          <span>Detailed keyword groups <b>Locked</b></span>
-          <span>Full clustering report <b>Locked</b></span>
-        </div>
-        <div class="blur-lines"><i></i><i></i><i></i><i></i></div>
-        <button class="amber wide" type="button" onclick="openPaywall()">🔒 Unlock full report</button>
+        <b>Add at least two keywords.</b>
+        <p>Enter one keyword phrase per line so the tool can compare shared terms.</p>
       </div>
     `;
-  } catch (error) {
-    result.innerHTML = `
-      <div class="preview-box">
-        <b>Unable to generate the preview.</b>
-        <p>Please try again later. If the issue continues, the preview API may need to be checked.</p>
-      </div>
-    `;
+    return;
   }
+
+  const stopWords = new Set([
+    "a", "an", "and", "are", "as", "at", "be", "best", "by", "for",
+    "from", "how", "in", "is", "of", "on", "or", "the", "to", "tool",
+    "with", "your", "my", "free"
+  ]);
+
+  const tokensFor = (phrase) => [...new Set(
+    phrase.toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, " ")
+      .split(/\s+/)
+      .map((word) => word.replace(/^-+|-+$/g, ""))
+      .filter((word) => word.length > 2 && !stopWords.has(word))
+  )];
+
+  const tokenCounts = new Map();
+  keywords.forEach((keyword) => {
+    tokensFor(keyword).forEach((token) => {
+      tokenCounts.set(token, (tokenCounts.get(token) || 0) + 1);
+    });
+  });
+
+  const sharedTokens = [...tokenCounts.entries()]
+    .filter(([, count]) => count >= 2)
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .slice(0, 3)
+    .map(([token]) => token);
+
+  const groups = sharedTokens.map((token) => ({
+    label: token.charAt(0).toUpperCase() + token.slice(1),
+    keywords: keywords.filter((keyword) => tokensFor(keyword).includes(token)).slice(0, 3)
+  })).filter((group) => group.keywords.length >= 2);
+
+  const groupedSet = new Set(groups.flatMap((group) => group.keywords.map((keyword) => keyword.toLowerCase())));
+  const remaining = keywords.filter((keyword) => !groupedSet.has(keyword.toLowerCase()));
+  const groupMarkup = groups.map((group) => `
+    <div class="preview-stats">
+      <span>Suggested topic group <b>${escapeHtml(group.label)}</b></span>
+      <ul>${group.keywords.map((keyword) => `<li>${escapeHtml(keyword)}</li>`).join("")}</ul>
+    </div>
+  `).join("");
+
+  result.innerHTML = `
+    <div class="preview-box">
+      <div class="eyebrow">Free preview · Basic grouping</div>
+      <h3>Keyword clustering preview</h3>
+      <p>Compared ${keywords.length} unique keyword phrases and found ${groups.length} possible shared-word group${groups.length === 1 ? "" : "s"}.</p>
+      ${groupMarkup || "<p>No clear shared-word groups were found. Try entering more closely related keyword phrases.</p>"}
+      ${remaining.length ? `<p><b>Not grouped in this preview:</b> ${remaining.slice(0, 3).map(escapeHtml).join(", ")}${remaining.length > 3 ? ", …" : ""}</p>` : ""}
+      <p><small>This free preview groups phrases by shared words only. Review search intent manually; it does not use live Google results or semantic analysis.</small></p>
+      <div class="preview-stats">
+        <span>Basic shared-word groups <b>Shown</b></span>
+        <span>Full analysis and expanded report <b>Locked</b></span>
+      </div>
+      <button class="amber wide" type="button" onclick="openPaywall()">🔒 Unlock full report</button>
+    </div>
+  `;
 });
 
 function openPaywall() {
@@ -360,4 +383,3 @@ function escapeHtml(value) {
 <script src="../gumroad-paywall.js"></script>
 </body>
 </html>
-```
