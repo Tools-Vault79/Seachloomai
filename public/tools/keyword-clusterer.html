@@ -298,8 +298,6 @@
   function tokenize(phrase) {
     return [...new Set(
       phrase.toLowerCase()
-        .normalize("NFKD")
-        .replace(/[\u0300-\u036f]/g, "")
         .replace(/[^a-z0-9\s-]/g, " ")
         .split(/\s+/)
         .map(word => word.replace(/^-+|-+$/g, ""))
@@ -325,16 +323,22 @@
 
     const groups = sharedTokens.map(token => ({
       label: token.charAt(0).toUpperCase() + token.slice(1),
-      keywords: keywords.filter((_, index) => tokenLists[index].includes(token)).slice(0, 5)
+      keywords: keywords.filter((_, index) =>
+        tokenLists[index].includes(token)
+      ).slice(0, 5)
     })).filter(group => group.keywords.length >= 2);
 
     const grouped = new Set(
-      groups.flatMap(group => group.keywords.map(keyword => keyword.toLowerCase()))
+      groups.flatMap(group =>
+        group.keywords.map(keyword => keyword.toLowerCase())
+      )
     );
 
     return {
       groups,
-      remaining: keywords.filter(keyword => !grouped.has(keyword.toLowerCase()))
+      remaining: keywords.filter(
+        keyword => !grouped.has(keyword.toLowerCase())
+      )
     };
   }
 
@@ -357,7 +361,7 @@
       result.innerHTML = `
         <div class="preview-box">
           <b>Add at least two unique keyword phrases.</b>
-          <p>Enter one phrase per line so the free preview can compare shared words.</p>
+          <p>Enter one phrase per line to compare shared terms.</p>
         </div>`;
       return;
     }
@@ -367,40 +371,47 @@
     const groupMarkup = groups.map(group => `
       <div class="preview-stats">
         <span>Suggested topic group <b>${escapeHtml(group.label)}</b></span>
-        <ul>${group.keywords.map(keyword => `<li>${escapeHtml(keyword)}</li>`).join("")}</ul>
-      </div>`).join("");
+        <ul>${group.keywords.map(keyword =>
+          `<li>${escapeHtml(keyword)}</li>`
+        ).join("")}</ul>
+      </div>
+    `).join("");
 
     const remainingMarkup = remaining.length
-      ? `<p><b>Not grouped in this preview:</b> ${remaining.slice(0, 3).map(escapeHtml).join(", ")}${remaining.length > 3 ? ", …" : ""}</p>`
+      ? `<p><b>Not grouped in this preview:</b> ${
+          remaining.slice(0, 3).map(escapeHtml).join(", ")
+        }${remaining.length > 3 ? ", …" : ""}</p>`
       : "";
 
     result.innerHTML = `
       <div class="preview-box">
         <div class="eyebrow">Free preview · Basic grouping</div>
         <h3>Keyword clustering preview</h3>
-        <p>Compared ${keywords.length} unique keyword phrases and found ${groups.length} possible shared-word group${groups.length === 1 ? "" : "s"}.</p>
-        ${groupMarkup || "<p>No clear shared-word groups were found. Try entering more closely related keyword phrases.</p>"}
+        <p>Compared ${keywords.length} unique keyword phrases and found
+          ${groups.length} possible shared-word group${groups.length === 1 ? "" : "s"}.
+        </p>
+        ${groupMarkup ||
+          "<p>No clear shared-word groups were found. Try more closely related phrases.</p>"}
         ${remainingMarkup}
-        <p><small>This free preview groups phrases by shared words only. Review search intent manually; it does not use live Google results or semantic analysis.</small></p>
+        <p><small>This preview groups phrases by shared words only. It does not use live Google results or semantic analysis.</small></p>
         <div class="preview-stats">
           <span>Basic shared-word groups <b>Shown</b></span>
           <span>Full analysis and expanded report <b>Locked</b></span>
         </div>
-        <button class="amber wide" type="button" onclick="openPaywall()">🔒 Unlock full report</button>
+        <button class="amber wide" type="button" onclick="openPaywall()">
+          🔒 Unlock full report
+        </button>
       </div>`;
   });
 
-  function openPaywall() {
-    const result = document.getElementById("result");
+  window.openPaywall = function() {
     result.innerHTML = `
       <div class="paywall">
         <div class="eyebrow">Protected result</div>
         <h3>Unlock the complete keyword clustering report</h3>
-        <p>The complete report may include detailed keyword groups, topic relationships and content recommendations, depending on the configured product.</p>
-        <div class="price">Full report <span>Lifetime purchase</span></div>
-        <p>Use the configured purchase options on this site to complete your purchase.</p>
+        <p>The complete report remains protected. Use the configured purchase options on this site to complete your purchase.</p>
       </div>`;
-  }
+  };
 })();
 </script>
 
