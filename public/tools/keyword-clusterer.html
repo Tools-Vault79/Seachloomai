@@ -4,10 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-
 <title>Free Keyword Clustering Tool – Group SEO Keywords | SeachLoom AI</title>
 <meta name="description" content="Use our free keyword clustering tool to group SEO keywords by topic and search intent. Organize keywords into clusters and plan your content strategy.">
-
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <link rel="canonical" href="https://seachloomai.shop/tools/keyword-clusterer.html">
 <meta name="theme-color" content="#0f766e">
@@ -18,7 +16,6 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SeachLoom AI">
 <meta property="og:locale" content="en_US">
-
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Free Keyword Clustering Tool | SeachLoom AI">
 <meta name="twitter:description" content="Group related SEO keywords by topic and search intent with SeachLoom AI.">
@@ -155,12 +152,12 @@
       </div>
 
       <form id="toolForm">
-        <label>
+        <label for="toolInput">
           Keywords (one per line)
           <textarea id="toolInput" required rows="5" autocomplete="off" placeholder="keyword clustering tool&#10;free keyword clustering tool&#10;keyword cluster analysis"></textarea>
         </label>
 
-        <label>
+        <label for="context">
           Optional context
           <textarea id="context" rows="3" placeholder="Add target country, audience, industry or page type"></textarea>
         </label>
@@ -275,108 +272,136 @@
 <script src="../auth.js"></script>
 
 <script>
-document.getElementById("toolForm").addEventListener("submit", (e) => {
-  e.preventDefault();
+(() => {
+  "use strict";
 
-  const rawInput = document.getElementById("toolInput").value;
+  const form = document.getElementById("toolForm");
+  const input = document.getElementById("toolInput");
   const result = document.getElementById("result");
-  const keywords = [...new Map(
-    rawInput.split(/\r?\n/)
-      .map((value) => value.trim())
-      .filter(Boolean)
-      .map((value) => [value.toLowerCase(), value])
-  ).values()];
 
-  if (keywords.length < 2) {
-    result.innerHTML = `
-      <div class="preview-box">
-        <b>Add at least two keywords.</b>
-        <p>Enter one keyword phrase per line so the tool can compare shared terms.</p>
-      </div>
-    `;
-    return;
+  function escapeHtml(value) {
+    return String(value).replace(/[&<>"']/g, character => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#039;"
+    }[character]));
   }
 
   const stopWords = new Set([
     "a", "an", "and", "are", "as", "at", "be", "best", "by", "for",
     "from", "how", "in", "is", "of", "on", "or", "the", "to", "tool",
-    "with", "your", "my", "free"
+    "with", "your", "my", "free", "using", "use", "online"
   ]);
 
-  const tokensFor = (phrase) => [...new Set(
-    phrase.toLowerCase()
-      .replace(/[^a-z0-9\s-]/g, " ")
-      .split(/\s+/)
-      .map((word) => word.replace(/^-+|-+$/g, ""))
-      .filter((word) => word.length > 2 && !stopWords.has(word))
-  )];
+  function tokenize(phrase) {
+    return [...new Set(
+      phrase.toLowerCase()
+        .normalize("NFKD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-z0-9\s-]/g, " ")
+        .split(/\s+/)
+        .map(word => word.replace(/^-+|-+$/g, ""))
+        .filter(word => word.length > 2 && !stopWords.has(word))
+    )];
+  }
 
-  const tokenCounts = new Map();
-  keywords.forEach((keyword) => {
-    tokensFor(keyword).forEach((token) => {
-      tokenCounts.set(token, (tokenCounts.get(token) || 0) + 1);
+  function buildGroups(keywords) {
+    const tokenLists = keywords.map(tokenize);
+    const counts = new Map();
+
+    tokenLists.forEach(tokens => {
+      tokens.forEach(token => {
+        counts.set(token, (counts.get(token) || 0) + 1);
+      });
     });
+
+    const sharedTokens = [...counts.entries()]
+      .filter(([, count]) => count >= 2)
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+      .slice(0, 3)
+      .map(([token]) => token);
+
+    const groups = sharedTokens.map(token => ({
+      label: token.charAt(0).toUpperCase() + token.slice(1),
+      keywords: keywords.filter((_, index) => tokenLists[index].includes(token)).slice(0, 5)
+    })).filter(group => group.keywords.length >= 2);
+
+    const grouped = new Set(
+      groups.flatMap(group => group.keywords.map(keyword => keyword.toLowerCase()))
+    );
+
+    return {
+      groups,
+      remaining: keywords.filter(keyword => !grouped.has(keyword.toLowerCase()))
+    };
+  }
+
+  form.addEventListener("submit", event => {
+    event.preventDefault();
+
+    const seen = new Set();
+    const keywords = input.value
+      .split(/\r?\n/)
+      .map(value => value.trim())
+      .filter(Boolean)
+      .filter(value => {
+        const key = value.toLowerCase();
+        if (seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      });
+
+    if (keywords.length < 2) {
+      result.innerHTML = `
+        <div class="preview-box">
+          <b>Add at least two unique keyword phrases.</b>
+          <p>Enter one phrase per line so the free preview can compare shared words.</p>
+        </div>`;
+      return;
+    }
+
+    const { groups, remaining } = buildGroups(keywords);
+
+    const groupMarkup = groups.map(group => `
+      <div class="preview-stats">
+        <span>Suggested topic group <b>${escapeHtml(group.label)}</b></span>
+        <ul>${group.keywords.map(keyword => `<li>${escapeHtml(keyword)}</li>`).join("")}</ul>
+      </div>`).join("");
+
+    const remainingMarkup = remaining.length
+      ? `<p><b>Not grouped in this preview:</b> ${remaining.slice(0, 3).map(escapeHtml).join(", ")}${remaining.length > 3 ? ", …" : ""}</p>`
+      : "";
+
+    result.innerHTML = `
+      <div class="preview-box">
+        <div class="eyebrow">Free preview · Basic grouping</div>
+        <h3>Keyword clustering preview</h3>
+        <p>Compared ${keywords.length} unique keyword phrases and found ${groups.length} possible shared-word group${groups.length === 1 ? "" : "s"}.</p>
+        ${groupMarkup || "<p>No clear shared-word groups were found. Try entering more closely related keyword phrases.</p>"}
+        ${remainingMarkup}
+        <p><small>This free preview groups phrases by shared words only. Review search intent manually; it does not use live Google results or semantic analysis.</small></p>
+        <div class="preview-stats">
+          <span>Basic shared-word groups <b>Shown</b></span>
+          <span>Full analysis and expanded report <b>Locked</b></span>
+        </div>
+        <button class="amber wide" type="button" onclick="openPaywall()">🔒 Unlock full report</button>
+      </div>`;
   });
 
-  const sharedTokens = [...tokenCounts.entries()]
-    .filter(([, count]) => count >= 2)
-    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-    .slice(0, 3)
-    .map(([token]) => token);
-
-  const groups = sharedTokens.map((token) => ({
-    label: token.charAt(0).toUpperCase() + token.slice(1),
-    keywords: keywords.filter((keyword) => tokensFor(keyword).includes(token)).slice(0, 3)
-  })).filter((group) => group.keywords.length >= 2);
-
-  const groupedSet = new Set(groups.flatMap((group) => group.keywords.map((keyword) => keyword.toLowerCase())));
-  const remaining = keywords.filter((keyword) => !groupedSet.has(keyword.toLowerCase()));
-  const groupMarkup = groups.map((group) => `
-    <div class="preview-stats">
-      <span>Suggested topic group <b>${escapeHtml(group.label)}</b></span>
-      <ul>${group.keywords.map((keyword) => `<li>${escapeHtml(keyword)}</li>`).join("")}</ul>
-    </div>
-  `).join("");
-
-  result.innerHTML = `
-    <div class="preview-box">
-      <div class="eyebrow">Free preview · Basic grouping</div>
-      <h3>Keyword clustering preview</h3>
-      <p>Compared ${keywords.length} unique keyword phrases and found ${groups.length} possible shared-word group${groups.length === 1 ? "" : "s"}.</p>
-      ${groupMarkup || "<p>No clear shared-word groups were found. Try entering more closely related keyword phrases.</p>"}
-      ${remaining.length ? `<p><b>Not grouped in this preview:</b> ${remaining.slice(0, 3).map(escapeHtml).join(", ")}${remaining.length > 3 ? ", …" : ""}</p>` : ""}
-      <p><small>This free preview groups phrases by shared words only. Review search intent manually; it does not use live Google results or semantic analysis.</small></p>
-      <div class="preview-stats">
-        <span>Basic shared-word groups <b>Shown</b></span>
-        <span>Full analysis and expanded report <b>Locked</b></span>
-      </div>
-      <button class="amber wide" type="button" onclick="openPaywall()">🔒 Unlock full report</button>
-    </div>
-  `;
-});
-
-function openPaywall() {
-  const result = document.getElementById("result");
-  result.innerHTML = `
-    <div class="paywall">
-      <div class="eyebrow">Protected result</div>
-      <h3>Unlock the complete keyword clustering report</h3>
-      <p>The complete report may include detailed keyword groups, topic relationships and content recommendations, depending on the configured product.</p>
-      <div class="price">Full report <span>Lifetime purchase</span></div>
-      <p>Use the configured purchase options on this site to complete your purchase.</p>
-    </div>
-  `;
-}
-
-function escapeHtml(value) {
-  return value.replace(/[&<>"']/g, (character) => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#039;"
-  }[character]));
-}
+  function openPaywall() {
+    const result = document.getElementById("result");
+    result.innerHTML = `
+      <div class="paywall">
+        <div class="eyebrow">Protected result</div>
+        <h3>Unlock the complete keyword clustering report</h3>
+        <p>The complete report may include detailed keyword groups, topic relationships and content recommendations, depending on the configured product.</p>
+        <div class="price">Full report <span>Lifetime purchase</span></div>
+        <p>Use the configured purchase options on this site to complete your purchase.</p>
+      </div>`;
+  }
+})();
 </script>
 
 <script src="../config/gumroad-products.js"></script>
