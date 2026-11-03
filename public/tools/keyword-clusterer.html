@@ -359,7 +359,9 @@
   }
 
   function classifyIntent(phrase) {
-    const words = new Set(normalizePhrase(phrase));
+    const words = new Set(
+      String(phrase).toLowerCase().replace(/[^a-z0-9\\s-]/g, " ").split(/\\s+/).filter(Boolean)
+    );
 
     if (["login", "log-in", "sign-in", "signin", "account", "website"].some(w => words.has(w))) {
       return "Navigational";
