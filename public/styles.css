@@ -1150,6 +1150,128 @@
 
 <script src="../config/gumroad-products.js"></script>
 <script src="../gumroad-paywall.js"></script>
+/* =========================================
+   SEO CONTENT SECTION — FORMATTING FIX
+   ========================================= */
 
+.tool-content {
+  width: 100%;
+  padding: 55px 7vw;
+  background: #f8fbfa;
+}
+
+.tool-content .workspace-card {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 38px 42px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(15, 55, 52, 0.05);
+}
+
+.tool-content .eyebrow {
+  margin-bottom: 14px;
+}
+
+.tool-content h2 {
+  font-family: Manrope, Inter, sans-serif;
+  font-size: 30px;
+  line-height: 1.25;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 32px 0 14px;
+  letter-spacing: -0.025em;
+}
+
+.tool-content .eyebrow + h2 {
+  margin-top: 0;
+}
+
+.tool-content h3 {
+  font-family: Manrope, Inter, sans-serif;
+  font-size: 21px;
+  line-height: 1.35;
+  color: var(--ink);
+  margin: 25px 0 10px;
+}
+
+.tool-content p {
+  font-size: 15px;
+  line-height: 1.85;
+  color: #526766;
+  margin: 0 0 16px;
+}
+
+.tool-content ul,
+.tool-content ol {
+  padding-left: 25px;
+  margin: 12px 0 22px;
+  color: #526766;
+}
+
+.tool-content li {
+  font-size: 15px;
+  line-height: 1.8;
+  padding-left: 4px;
+  margin-bottom: 5px;
+}
+
+.tool-content a {
+  color: var(--teal);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.tool-content a:hover {
+  color: var(--amber2);
+  text-decoration: underline;
+}
+
+.tool-content .workspace-card + .workspace-card {
+  margin-top: 25px;
+}
+
+/* FAQ spacing */
+.tool-content h3 + p {
+  margin-bottom: 20px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .tool-content {
+    padding: 40px 5vw;
+  }
+
+  .tool-content .workspace-card {
+    padding: 28px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .tool-content {
+    padding: 28px 4vw;
+  }
+
+  .tool-content .workspace-card {
+    padding: 20px;
+    border-radius: 14px;
+  }
+
+  .tool-content h2 {
+    font-size: 25px;
+  }
+
+  .tool-content h3 {
+    font-size: 19px;
+  }
+
+  .tool-content p,
+  .tool-content li {
+    font-size: 14px;
+  }
+}
 </body>
 </html>
